@@ -1,0 +1,63 @@
+Install Apache server on Ubuntu:
+# apt-get install apache2 php7.2 net-tools
+
+Add Apache2 to the firewall exceptions
+# ufw allow "Apache"
+
+Note: By default the firewall is disabled on ubuntu. You can check its status by:
+# ufw status
+
+Check if the Apache service is running:
+# systemctl status apache2
+
+If the apache2 service is running, it means that the server can be accessed on the localhost
+
+_____________________________________________________________________________________________________________
+
+
+Domain Name: mysite.com
+
+sudo mkdir -p /var/www/mysite.com/public_html
+sudo chown -R $USER:$USER /var/www/mysite.com/public_html/
+sudo chmod -R 755 /var/www/
+touch /var/www/mysite.com/public_html/index.php
+
+example text: index.php
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Site</title>
+</head>
+<body>
+<h1>This is My extremely Awesome Website</h1>
+<h2>This website is under construction :(</h2>
+</body>
+</html>
+
+
+sudo cp -v /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/mysite.com.conf
+example text: mysite.com.conf
+
+<VirtualHost *:80>
+	ServerName mysite.com
+	ServerAlias www.mysite.com
+	ServerAdmin info@mysite.com
+	DocumentRoot /var/www/mysite.com/public_html
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
+
+sudo a2ensite mysite.com.conf
+sudo a2dissite 000-default.conf
+
+sudo systemctl restart apache2
+
+ln -s -r /var/www/mysite.com ~/Downloads/
+
+
+_____________________________________________________________________________________________________________
+
+
