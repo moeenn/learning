@@ -19,9 +19,10 @@
 	<br>
 	<input type="submit" value="Submit">
 	<br>
-	<hr>
-	<br>
 </form>	
+
+<hr>
+<br>
 
 <?php
 	// assign input to variable
@@ -29,9 +30,10 @@
 
 	// define the function to cube the input
 	function cube($number) {
-		return pow($number, 3);
-
 		// instead of doing an echo this is a more accurate method
+		// Note: return should be the last line of the function
+		// any instruction action the return line will be ignored!
+		return pow($number, 3);
 	}
 
 	// call the function and assign its return value to a variable

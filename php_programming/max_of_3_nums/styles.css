@@ -1,0 +1,21 @@
+﻿body {
+  font-family:Iosevka,Ubuntu,Helvettica,sans-serif;
+  font-size: 2.0em;
+  background-color:#ffffff;
+  padding: 20px;
+}
+
+p {
+  padding: 20px;
+  margin: 20px;
+}
+
+input {
+	border-width: 1px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+radio {
+	border-width: 1px;
+}
