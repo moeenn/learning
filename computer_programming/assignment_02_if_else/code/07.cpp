@@ -8,7 +8,7 @@ int main() {
 	cin >> num1 >> num2;
 
 	// check which number is larger
-	( num1 > num2 ) ? cout << "Number 1 (" << num1 << ") is larger than Number 2 (" << num2 << ")" : cout << "Number 2 (" << num2 << ") is larger than Number 1 (" << num1 << ")";
+	( num1 > num2 ) ? cout << num1 << " is larger than " << num2 : cout << "Number 2 (" << num2 << ") is larger than Number 1 (" << num1 << ")";
 
 	return 0;
 }
