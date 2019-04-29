@@ -1,9 +1,11 @@
 # include <iostream>
+# include <iomanip>
+
 using namespace std;
 
 int main() {
 	// define strength of gravity
-	const float gravity = 9.8;
+	const float GRAVITY = 9.8;
 
 	// ask user for object mass
 	cout << "Please enter the object's mass in kilograms: ";
@@ -12,7 +14,7 @@ int main() {
 
 	// calculate weight
 	float weight;
-	weight = mass * gravity;
+	weight = mass * GRAVITY;
 
 	// input validations 
 	// mass cannot be nagative
@@ -22,6 +24,7 @@ int main() {
 	}
 
 	// display results to user
+	cout << fixed << showpoint << setprecision(2);
 	cout << "The weight of the object is " << weight << " Newtons."<< endl;
 
 	if ( weight > 1000 ) {
