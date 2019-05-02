@@ -23,7 +23,6 @@ int main() {
 	hours = static_cast<int>(start_time);
 	minutes = ( start_time - static_cast<int>(start_time)) * 100;
 
-
 	// hours cannot be more than 23 or less than 0
 	if (hours >= 24 ) {
 		cout << "Invalid Input! Hours should be less than 24." << endl;
@@ -65,24 +64,17 @@ int main() {
 		call_rate = 0.55;
 	} else if ( start_time >= 19.01 && start_time <= 23.59 ) {
 		call_rate = 0.35;
-	} else {
-		cout << "{General error} fix logic" << endl;
-	}
-
+	} 
 
 	// calculate the call charges
 	float bill;
 	bill = call_duration * call_rate;
-
 
 	// display the bill to the user
 	cout << fixed << showpoint << setprecision(2);
 	cout << "Call Rate: " << call_rate << endl;
 	cout << "Call Duration: " << call_duration << endl;
 	cout << "Total Bill: " << bill << endl;
-
-//	cout << hours << " Hours " << endl << minutes << " Minutes "  << endl << call_rate << " Call Rate" << endl << bill << endl;
-
 
 	return 0;
 }
