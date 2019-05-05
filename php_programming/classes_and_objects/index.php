@@ -15,6 +15,7 @@
 
 		Object:
 		An object is an instance of a class i.e. it is a variable we create using our custom data type (i.e. class)
+		An object inherits all the attributes of its class
 
 -->	
 
@@ -26,6 +27,7 @@
 	// we define a rectangle as a new class
 	class Rectangle {
 		// these are the attributes of the class
+		// var means Public attributes (more on this later)
 		var $length;
 		var $width;
 	}

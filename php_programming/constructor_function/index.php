@@ -8,26 +8,13 @@
 <body>
 
 <!-- 
-		Class:
-		A class is a used to represent any realworld entity e.g. book, car, person etc.
-		It can be thought of as a custom data type, much like a string, boolean, integer etc.
-		Every class will have certain attributes i.e. properties
-
-		Object:
-		An object is an instance of a class i.e. it is a variable we create using our custom data type (i.e. class)
-
 		Constructors:
 		It is a function inside a class, that will get called everytime we create an object of that class.
-
 -->	
-
-<!-- 
-		Let's create a website that is able to calculate the area of a rectangle
--->
 
 <?php
 /*
-	we define a rectangle as a new class
+	we define a computer as a new class
 	It is common convention to use title case for names of classes
 */
 	class Computer {
