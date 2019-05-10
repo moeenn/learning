@@ -1,0 +1,74 @@
+/*
+Following is called Reset. It overrides the settings below with whatever settings you specify
+
+* {
+	margin: 0px;	
+	padding: 10px;
+}
+
+*/
+
+body {
+	background-color: #fcfcfc;
+	color: #404040;
+	font-family: "Input Sans", Ubuntu;
+	font-weight: normal;
+	font-size: 1.2em;
+
+	/*
+	Same as above
+	font: normal 1.2em Iosevka, Ubuntu;
+	*/
+
+	line-height: 1.6em;
+}
+
+
+/*	To target a class, we use a dot */
+
+.container {
+	width: 70%;
+
+	/* move everything in class to center */
+	margin: auto;
+}
+
+.box-1 {
+	background-color: #202020;
+	color: #fbfbfb;
+	border: 3px red solid;
+
+	/* This applies to all sides */
+	padding: 20px;
+
+	/* move the box down */
+	margin-top: 5%;
+
+}
+
+/* 
+	Margin is gap outside the border
+	Padding is the gap inside the border
+*/	
+
+p {
+	/* 		Top   Right  Bottom  Left (i.e. Clockwise) */
+	margin: 30px, 10px, 30px, 10px;
+}
+
+/* lets target a tag within a class */
+.box-1 h1 {
+	margin-top: 10px;
+	margin-bottom: 5px;
+
+	/* class tag specific font settings */
+	font-family: Ubuntu;
+	font-size: 2.0em;
+	font-style: bold;
+}
+
+
+.box-2 {
+	border: 1px dotted #cdcdcd;
+	padding: 40px;
+}
