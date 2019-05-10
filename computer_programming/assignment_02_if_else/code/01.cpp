@@ -2,16 +2,14 @@
 using namespace std;
 
 int main() {
-	// ask the user to enter a number
-	cout << "Please enter a numbers: " << flush;
-	double num1;
-	cin >> num1;
+	cout << "Please enter a number: ";
+	long int num;
+	cin >> num;
 
-	// check if number is positive
-	if ( num1 >= 0 ) {
-		cout << "The number is positive" << endl;
+	if( num % 2 == 1 ) {
+		cout << "Odd Number" << endl;
 	} else {
-		cout << "The number is negative" << endl;
+		cout << "Even Number" << endl;
 	}
 
 	return 0;
