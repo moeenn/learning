@@ -9,17 +9,13 @@ using namespace std;
 */
 
 // function prototypes
-void getNum();
-void convToVector(long int num);
-
-// Global variables
-long int num;
-vector<int> number;
+long int getNum();									// get the input from user
+vector<int> convToVector(long int num);				// convert in input to vector
 
 int main()
 {
-	getNum();
-    convToVector(num);
+	long int num = getNum();
+    vector<int> number = convToVector(num);
 
 	int indexLastDigit = number.size() - 1; 
 
@@ -40,7 +36,9 @@ int main()
     return 0;
 }
 
-void getNum() {
+long int getNum() {
+	long int num;
+
 	do {
 	    cout << "Please enter a number: ";
 	    cin >> num;
@@ -60,13 +58,19 @@ void getNum() {
 	    	break;
 	    }			
 	} while (true);
+
+	return num;
 }
 
-void convToVector(long int num) {
+vector<int> convToVector(long int num) {
+	vector<int> number;
+
     while(num > 0) {
     	// get the last digit of number and insert it at start of vector. This preserves order of digits.
         number.insert( number.begin(), num % 10 );
         // truncate the last digit of number (i.e. the digit that has already been inserted into vector)
         num /= 10;
     }
+
+    return number;
 }

@@ -10,23 +10,17 @@ using namespace std;
 */
 
 // function prototypes
-void getNum();
-void convToVector(long int num);
-void convToMirrorVector(long int num);
-int mirrorNumber();
-
-// Global variables
-long int num;
-vector<int> number;
-vector<int> mirror;
+long int getNum();									// get the input from user
+vector<int> convToMirrorVector(long int num);		// convert the input to mirror vector
+int mirrorNumber(vector<int> mirror);				// convert the mirror vector back into a single number
 
 int main()
 {
-	getNum();
-    convToVector(num);
-    convToMirrorVector(num);
+	long int num = getNum();
+	vector<int> mirrorVector = convToMirrorVector(num);
+	int mirror = mirrorNumber(mirrorVector);
 
-    if(num == mirrorNumber()) {
+    if(num == mirror) {
     	cout << "The entered number is a Palindrome" << endl;
     } else {
     	cout << "The entered number is NOT a Palindrome" << endl;
@@ -35,7 +29,9 @@ int main()
     return 0;
 }
 
-void getNum() {
+long int getNum() {
+	long int num;
+
 	do {
 	    cout << "Please enter a number: ";
 	    cin >> num;
@@ -55,25 +51,22 @@ void getNum() {
 	    	break;
 	    }			
 	} while (true);
+
+	return num;
 }
 
-void convToVector(long int num) {
-    while(num > 0) {
-    	// get the last digit of number and insert it at start of vector. This preserves order of digits.
-        number.insert( number.begin(), num % 10 );
-        // truncate the last digit of number (i.e. the digit that has already been inserted into vector)
-        num /= 10;
-    }
-}
+vector<int> convToMirrorVector(long int num) {
+	vector<int> result;
 
-void convToMirrorVector(long int num) {
 	while( num > 0 ) {
-		mirror.insert( mirror.end(), num % 10 );
+		result.insert( result.end(), num % 10 );
 		num /= 10;		
 	}
+
+	return result;
 }
 
-int mirrorNumber() {
+int mirrorNumber(vector<int> mirror) {
 	int number = 0;
 	int power = 0;
 	int lastDigitIndex = mirror.size() - 1;
