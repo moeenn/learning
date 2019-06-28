@@ -8,18 +8,19 @@ void sortArray(int arr[], int size);
 int searchArray_linear(int arr[], int size, int query );
 int searchArray_binary(int arr[], int size, int query );
 
-int main() {}
+int main() {
 	const int SIZE = 5;
 	int myArray[SIZE];
-
 	getArray(myArray, SIZE);
 	sortArray(myArray, SIZE);
-	printArray(myArray, SIZE);
+//	printArray(myArray, SIZE);
 
 	while(true) {
 		cout << endl << "Enter number to search: ";
 		int search;
 		cin >> search;
+
+		// binary search is more efficient than linear search
 		int result = searchArray_binary(myArray, SIZE, search );		
 
 		if(result == -1 ) {
@@ -29,7 +30,7 @@ int main() {}
 			break;
 		}
 	}
-	return 0;	
+	return 0;
 }
 
 // user functions
@@ -51,6 +52,7 @@ void printArray( int arr[], int size ) {
 void sortArray(int arr[], int size) {
 	for( int a = 1; a < size; a++ ) {
 		for( int i=0; i < size-1; i++ ) {
+			// flip the operator to sort descending
 			if( arr[i] > arr[i+1] ) {
 				// swap places
 				int c;
@@ -64,7 +66,6 @@ void sortArray(int arr[], int size) {
 
 // linear search
 int searchArray_linear(int arr[], int size, int query ) {
-	bool flag = false;
 	for( int i=0; i < size; i++ ) {
 		if( arr[i] == query ) {
 			return i;	
@@ -90,4 +91,4 @@ int searchArray_binary(int arr[], int size, int query ) {
 		}
 	}
 	return -1;
-} 
+}
