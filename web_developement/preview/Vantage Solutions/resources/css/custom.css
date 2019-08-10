@@ -1,0 +1,17 @@
+.section {
+	margin: 1rem 0rem;
+}
+
+.information {
+	margin: auto 0rem;
+}
+
+.information p {
+	margin-bottom: 0.5rem;
+	font-size: 1.4rem;
+}
+
+.cover-image {
+	background: url('resources/images/landing_cover.png')
+	background-size: cover;
+}
