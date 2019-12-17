@@ -1,4 +1,4 @@
-BS-Computer Science Assignments
+Learning Code
 ===
 
-This is a simple repository that I have created for storing my coding assignments. This is a public repository and I hope that others will find it useful as well :)
+Partial Programs and Small Projects meant for learning Programming
