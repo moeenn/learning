@@ -1,0 +1,2 @@
+Set the generated key as Environment Variable:
+$ set -x GO_SESSION_KEY key
