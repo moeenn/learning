@@ -131,3 +131,8 @@ int main() {
 	// auto factors = prime_factors(36);
 	// for(auto& factor : factors) std::cout << factor << "\t";
 }
+
+// All above assertions are evaluated at compile time. You may
+// consider using static_assert for performing compile-time
+// assertion evaluation. In that case pre-processor statements for
+// DEBUG may not be required.
