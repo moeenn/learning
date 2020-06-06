@@ -42,12 +42,13 @@ struct test_case {
 };
 
 const test_case test_cases[] = {
-	{ 2, 	1101, 			13 },
-	{ 2,	11011, 			27 },
-	{ 2,	111101, 		61 },
-	{ 2,	101100, 		44 },
-	{ 2,	100101, 		37 },
-	{ 2,	1101111, 		111 },
+	{ 2, 	1101, 			13 		},
+	{ 2,	11011, 			27 		},
+	{ 2,	111101, 		61 		},
+	{ 2,	101100, 		44 		},
+	{ 2,	100101, 		37 		},
+	{ 2,	1101111, 		111 	},
+	{ 8,	2057,			1071 	},
 };
 
 void test_binary_to_decimal() {
@@ -58,7 +59,7 @@ void test_binary_to_decimal() {
 
 		assert(binary_to_decimal(test.base, test.input) == test.output);
 	}
-	std::cout << "[debug] All Tests Passed :) \n";
+	std::cout << "[debug] All Tests Passed! \n";
 }
 
 int main() {
