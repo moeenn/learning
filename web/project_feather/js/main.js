@@ -22,8 +22,6 @@ function toggleFAQEntries() {
     return;
   }
 
-  console.log(faq_entries);
-
   for (let i = 0; i < faq_entries.length; i++) {
     faq_entries[i].addEventListener("click", () => {
       const details = faq_entries[i].querySelector("p");

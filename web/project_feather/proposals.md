@@ -16,3 +16,4 @@
 - [ ] Rename `.fg-bold` to `.fg-wight-bold`
 - [ ] Add properties `justify-content` and `align-self` to `.fg-align-*` classes
 - [ ] Change `.full-width` to `.width-full`. Also add classes `.width-1/2`, `.width-1/4`, `.width-3/4`. Test adding property `max-width`
+- [ ] Remove `.container` media query entry
