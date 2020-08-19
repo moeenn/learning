@@ -1,6 +1,6 @@
 import sqlite3
 
-def connect(dbFile="testing.db"):
+def connect(dbFile="./scraped_db/testing.db"):
 	conn = sqlite3.connect(dbFile, check_same_thread=False)
 	__createSchema(conn)
 	return conn

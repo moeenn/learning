@@ -1,7 +1,7 @@
 from datetime import datetime
 
 class Log:
-	def __init__(self, file="log.txt"):
+	def __init__(self, file="./logs/log.txt"):
 		self.file = file
 
 	def __currentTime(self):

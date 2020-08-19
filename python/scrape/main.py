@@ -2,6 +2,7 @@ import concurrent.futures
 import foxhq
 import db
 from log import Log
+import sys
 
 
 def inspectGallery(url, log):
@@ -43,8 +44,16 @@ if __name__ == "__main__":
 	baseURL = "https://foxhq.com/showgals.php?page="
 	conn = db.connect()
 
-	with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-		futures = [executor.submit(inspectAndSavePage, conn, f"{baseURL}{page}", log) for page in range(1, 370) ]
+	try:
+		with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+			futures = [executor.submit(inspectAndSavePage, conn, f"{baseURL}{page}", log) for page in range(1, 370) ]
 
-	for future in concurrent.futures.as_completed(futures):
-		log.write(future.result())
+		for future in concurrent.futures.as_completed(futures):
+			log.write(future.result())
+
+	except KeyboardInterrupt:
+		print("Keyboard Interrupt - Exiting Gracefully ...")
+		sys.exit(0)
+
+	except Exception as error:
+		print("Error: ", error)
