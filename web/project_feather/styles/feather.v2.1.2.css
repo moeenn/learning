@@ -1008,14 +1008,14 @@ table th {
 }
 
 /* adjust for smaller screens */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
   /* root css variables */
   :root {
     --spacing-1: 1rem;
-    --spacing-2: 1.5rem;
-    --spacing-3: 2rem;
-    --spacing-4: 2.5rem;
-    --spacing-5: 3rem;
+    --spacing-2: 1.8rem;
+    --spacing-3: 2.4rem;
+    --spacing-4: 3.3rem;
+    --spacing-5: 4rem;
     --spacing-big: 5rem;
     --spacing-huge: 6.5rem;
   }
