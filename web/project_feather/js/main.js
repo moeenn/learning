@@ -24,13 +24,17 @@ function toggleFAQEntries() {
 
   for (let i = 0; i < faq_entries.length; i++) {
     faq_entries[i].addEventListener("click", () => {
+      // show details
       const details = faq_entries[i].querySelector("p");
-
       if (details.classList.contains("d-none")) {
         details.classList.remove("d-none");
       } else {
         details.classList.add("d-none");
       }
+
+      // change icon
+      const icon = faq_entries[i].querySelector("span");
+      icon.innerText = icon.innerText === "+" ? "-" : "+";
     });
   }
 }
