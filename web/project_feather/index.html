@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <title>Intolerance Testing</title>
     <link rel="stylesheet" href="styles/feather.v2.1.2.css" />
     <link rel="stylesheet" href="styles/custom.css" />
@@ -21,14 +24,19 @@
     <section class="bg-color-white">
       <div class="container">
         <div class="navbar d-flex">
-          <div>
+          <div class="navbar__fixed">
             <!-- main site logo -->
-            <div class="navbar__logo">
+            <div class="navbar__fixed__logo">
               <img src="images/logo.png" />
               <span class="fg-color-primary">
                 Intolerance <span class="fg-color-dull">Testing</span>
               </span>
             </div>
+
+            <!-- navbar links expand button -->
+            <a href="#" class="navbar__fixed__links_expand"
+              ><img src="images/navbar_button.png" alt=""
+            /></a>
           </div>
 
           <!-- navbar links section -->
@@ -343,11 +351,11 @@
     <section class="bg-color-white">
       <div class="container pv-big">
         <div class="tests_video d-flex flex-h">
-          <div class="flex-1" style="position: relative;">
+          <div class="flex-1">
             <img
               src="images/video_thumbnail.jpg"
               class="rounded-normal"
-              style="width: 90%;"
+              style="max-width: 90%;"
             />
 
             <!-- <div
