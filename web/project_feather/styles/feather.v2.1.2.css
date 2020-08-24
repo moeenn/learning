@@ -50,7 +50,7 @@
   --shadow-accent: 0rem 1rem 1.5rem rgba(220, 45, 101, 0.25);
 
   /*buttons*/
-  --button-fg: rgba(85, 85, 85, 1);
+  --button-fg: var(--accent-color-primary);
   --button-border: solid var(--border-size-normal) rgba(241, 164, 196, 1);
   --button-height: 5rem;
 
