@@ -18,7 +18,7 @@
   --fg-line-height: 2rem;
   --fg-letter-spacing: 0.01rem;
   --fg-color-normal: rgba(0, 0, 0, 0.7);
-  --fg-color-dull: #5b5b5b;
+  --fg-color-dull: rgba(91, 91, 91, 0.83);
 
   /*spacing constants*/
   --spacing-1: 1rem;
@@ -222,10 +222,10 @@ em {
 
 /*lists*/
 li {
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-1);
 }
 ul {
-  list-style: circle inside;
+  list-style: inside;
 }
 ol {
   list-style: decimal inside;

@@ -236,7 +236,7 @@
   }
 
   .tests_video h2,
-  h6 {
+  .tests_video h6 {
     margin-top: var(--spacing-2);
     padding: 0 var(--spacing-2);
   }
@@ -364,4 +364,13 @@
   .alergy_v_intolerance__comparison p {
     width: 100%;
   }
+}
+
+/* ---- hair testing page ------------------------ */
+.hair_testing__cards {
+  grid-gap: var(--spacing-3);
+}
+
+.hair_testing__cards div {
+  border-radius: 0.4rem;
 }

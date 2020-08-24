@@ -25,4 +25,5 @@
 - [ ] Deprecate `.message` class
 - [ ] Re-adjust `--spacing-*` mobile values
   - [ ] Increase `--spacing-2` value to `1.8rem`
-- [ ] UL Bug: Change `--font-size-normal` to `--fg-size-normal` 
+- [ ] UL Bug: Change `--font-size-normal` to `--fg-size-normal`
+- [ ] UL Change value of property `list-style` to `inside`;
