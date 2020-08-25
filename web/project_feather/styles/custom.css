@@ -350,6 +350,16 @@
   height: 9rem;
 }
 
+.recommended {
+  background-color: black;
+  font-size: calc(var(--fg-size-small) - 0.3rem);
+  padding: 0.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  border-radius: var(--border-radius);
+}
+
 /* ---- allergy vs intolerance page --------------- */
 .alergy_v_intolerance__video {
   margin: var(--spacing-big) 0;
@@ -377,4 +387,64 @@
 
 .hair_testing__cards div {
   border-radius: 0.4rem;
+}
+
+/* ---- products page  --------------------------- */
+.products_page__product_image {
+  width: 90%;
+}
+
+.products_page__quantity_box {
+  display: inline;
+  padding: 1.6rem var(--spacing-2);
+}
+
+.products_page__quantity_box span {
+  height: 100%;
+  align-self: center;
+}
+
+.products_page__quantity_box button {
+  align-self: center;
+  display: inline-block;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: black;
+  background-color: transparent;
+  vertical-align: unset;
+}
+
+.products_page__tabs {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: var(--border-size-normal) solid #e1e1e1;
+}
+
+.products_page__tabs a {
+  color: var(--fg-color-dull);
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.products_page__tabs a:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.products_page__tabs a.active {
+  color: var(--accent-color-primary);
+  border-bottom: calc(var(--border-size-normal) * 2) solid
+    var(--accent-color-primary);
+  font-weight: var(--fg-weight-bold);
+}
+
+@media only screen and (max-width: 914px) {
+  .products_page__product_image {
+    width: 100%;
+    margin-bottom: var(--spacing-2);
+  }
+
+  .products_page__tabs a {
+    width: 100%;
+  }
 }

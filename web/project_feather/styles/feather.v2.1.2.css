@@ -1037,6 +1037,7 @@ table th {
   .two-col,
   .three-col,
   .four-col,
+  .four-col-custom,
   .five-col,
   .six-col {
     grid-template-columns: 1fr;
