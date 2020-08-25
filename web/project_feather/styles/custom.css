@@ -50,6 +50,10 @@
   text-transform: uppercase;
 }
 
+.gap-5 {
+  grid-gap: var(--spacing-5);
+}
+
 /* theme specific stylings */
 /* ---- navbar ----------------------------------- */
 .navbar {

@@ -989,6 +989,13 @@ table th {
     minmax(calc(var(--container-width) / 4.75), 1fr)
   );
 }
+
+.four-col-custom {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(calc(var(--container-width) / 6), 1fr)
+  );
+}
 .five-col {
   grid-template-columns: repeat(
     auto-fit,
