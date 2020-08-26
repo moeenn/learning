@@ -112,6 +112,11 @@ function decrementQuantityCounter() {
 
 function getProductTabs() {
   const tabs = $(".products_page__tabs");
+  if (!tabs) {
+    console.log("Product tabs not found");
+    return;
+  }
+
   const tab_anchors = tabs.querySelectorAll("a");
   const results = [];
 
@@ -124,6 +129,9 @@ function getProductTabs() {
 
 function productPageTabs() {
   const tabIDs = getProductTabs();
+  if (!tabIDs) {
+    return;
+  }
 
   for (const id of tabIDs) {
     const tab = $(id);

@@ -45,6 +45,15 @@
   align-self: center;
 }
 
+/* button anchor fix */
+button a {
+  color: var(--accent-color-primary);
+}
+
+.button-primary a {
+  color: white;
+}
+
 /* misc. utilities */
 .uppercase {
   text-transform: uppercase;
@@ -72,7 +81,7 @@
   margin-right: var(--spacing-1);
 }
 
-.navbar__fixed__logo span {
+.navbar__fixed__logo a {
   font-weight: var(--fg-weight-bold);
   align-self: center;
 }
