@@ -438,7 +438,7 @@
   font-weight: var(--fg-weight-bold);
 }
 
-@media only screen and (max-width: 914px) {
+@media only screen and (max-width: 814px) {
   .products_page__product_image {
     width: 100%;
     margin-bottom: var(--spacing-2);

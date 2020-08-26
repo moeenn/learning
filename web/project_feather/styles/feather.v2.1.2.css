@@ -977,6 +977,14 @@ table th {
     minmax(calc(var(--container-width) / 2.75), 1fr)
   );
 }
+
+.two-col-custom {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(calc(var(--container-width) / 4), 1fr)
+  );
+}
+
 .three-col {
   grid-template-columns: repeat(
     auto-fit,
@@ -1035,6 +1043,7 @@ table th {
 
   /*allow canvas resizing on very small screens*/
   .two-col,
+  .two-col-custom,
   .three-col,
   .four-col,
   .four-col-custom,
