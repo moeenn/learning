@@ -50,7 +50,8 @@ if ( ! function_exists( 'intolerancetesting_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'intolerancetesting' ),
+				'primary' => esc_html__( 'Primary Top Navigation Bar', 'intolerancetesting' ),
+				'footer' => esc_html__( 'Secondary Bottom Footer Links', 'intolerancetesting' )
 			)
 		);
 
@@ -184,4 +185,24 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
+}
+
+// simplify the markup returned by wp_nav_menu() 
+function clean_custom_menus() {
+	$menu_name = 'primary'; // specify custom menu slug
+	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+		$menu = wp_get_nav_menu_object($locations[$menu_name]);
+		$menu_items = wp_get_nav_menu_items($menu->term_id);
+
+		$menu_list = '';
+
+		foreach ((array) $menu_items as $key => $menu_item) {
+			$title = $menu_item->title;
+			$url = $menu_item->url;
+			$menu_list .= "<a href=\"{$url}\">{$title}</a>";
+		}
+	} else {
+		// $menu_list = '<!-- no list defined -->';
+	}
+	echo $menu_list;
 }

@@ -49,16 +49,17 @@
 
             <!-- navbar links expand button -->
             <a href="#" class="navbar__fixed__links_expand"
-              ><img src="images/navbar_button.png" alt=""
+              ><img src="<?php echo get_template_directory_uri() . "/assets/images/navbar_button.png" ?>" alt=""
             /></a>
           </div>
 
           <!-- navbar links section -->
           <div class="navbar__links">
-            <a href="our_tests.html">Our Tests</a>
+            <!-- <a href="our_tests.html">Our Tests</a>
             <a href="symptoms.html">Symptoms</a>
             <a href="hair_testing.html">Hair Testing</a>
-            <a href="allergy_vs_intolerance.html">Alergy and Intolerance</a>
+            <a href="allergy_vs_intolerance.html">Alergy and Intolerance</a> -->
+            <?php if (function_exists(clean_custom_menus())) clean_custom_menus(); ?>
           </div>
 
           <!-- shop basket icon -->
