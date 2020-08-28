@@ -39,8 +39,9 @@
           <div class="navbar__fixed">
             <!-- main site logo -->
             <div class="navbar__fixed__logo">
-              <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'?>" />
-              <a href="index.html">
+              <img src="<?php if (function_exists(intolerancetesting_get_custom_logo_url())) intolerancetesting_get_custom_logo_url(); ?>">
+              
+              <a href="<?php echo esc_url(home_url('/')); ?>">
                 <span class="fg-color-primary">
                   Intolerance <span class="fg-color-dull">Testing</span>
                 </span>
@@ -59,7 +60,7 @@
             <a href="symptoms.html">Symptoms</a>
             <a href="hair_testing.html">Hair Testing</a>
             <a href="allergy_vs_intolerance.html">Alergy and Intolerance</a> -->
-            <?php if (function_exists(clean_custom_menus())) clean_custom_menus(); ?>
+            <?php if (function_exists(intolerancetesting_clean_custom_menus())) intolerancetesting_clean_custom_menus(); ?>
           </div>
 
           <!-- shop basket icon -->

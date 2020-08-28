@@ -86,6 +86,10 @@ button a {
   align-self: center;
 }
 
+.navbar__fixed__logo a:hover {
+  background-color: transparent;
+}
+
 .navbar__links {
   flex: 1;
   text-align: right;

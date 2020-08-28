@@ -93,13 +93,7 @@ if ( ! function_exists( 'intolerancetesting_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
+			'custom-logo'
 		);
 	}
 endif;
@@ -142,7 +136,8 @@ add_action( 'widgets_init', 'intolerancetesting_widgets_init' );
  */
 function intolerancetesting_scripts() {
 	wp_enqueue_style( 'intolerancetesting-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_style( 'intolerancetesting-style-custom', get_template_directory_uri() . "/assets/css/custom.css", array("intolerancetesting-style"), _S_VERSION );
+	wp_enqueue_style( 'intolerancetesting-style-framework', get_template_directory_uri() . "/assets/css/feather.css", array(), _S_VERSION );
+	wp_enqueue_style( 'intolerancetesting-style-custom', get_template_directory_uri() . "/assets/css/custom.css", array("intolerancetesting-style-framework"), _S_VERSION );
 
 	wp_enqueue_script( 'intolerancetesting-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'intolerancetesting-main', get_template_directory_uri() . '/assets/js/main.js', array(), _S_VERSION, true );	
@@ -188,7 +183,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 // simplify the markup returned by wp_nav_menu() 
-function clean_custom_menus() {
+function intolerancetesting_clean_custom_menus() {
 	$menu_name = 'primary'; // specify custom menu slug
 	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
 		$menu = wp_get_nav_menu_object($locations[$menu_name]);
@@ -205,4 +200,11 @@ function clean_custom_menus() {
 		// $menu_list = '<!-- no list defined -->';
 	}
 	echo $menu_list;
+}
+
+// get the URL for the custom site logo defined in the WP_Admin Panel
+function intolerancetesting_get_custom_logo_url() {
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+	echo $image[0];
 }
