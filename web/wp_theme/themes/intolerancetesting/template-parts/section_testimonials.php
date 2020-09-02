@@ -12,8 +12,8 @@
 <section class="bg-color-white">
   <div class="container pv-big">
     <div class="fg-align-center">
-      <h2 class="fg-color-primary">Don't take our word for it..</h2>
-      <p>IntoleranceTesting is rated by thousands of customers</p>
+      <h2 class="fg-color-primary"><?php the_field('testimonials__heading_main'); ?></h2>
+      <p><?php the_field('testimonials__desc'); ?></p>
     </div>
 
     <div class="d-grid three-col mt-2">
@@ -77,7 +77,8 @@
 
     <div class="fg-align-center">
       <button class="uppercase">
-        <a href="reviews.html" class="fg-color-primary">View All Reviews</a>
+        <?php $button_link = get_field('testimonials__call_to_action'); ?>
+        <a href="<?php echo $button_link['url']; ?>"><?php echo $button_link['title']; ?></a>
       </button>
     </div>
   </div>

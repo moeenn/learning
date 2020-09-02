@@ -27,7 +27,7 @@
     <section>
       <div class="bg-color-primary fg-color-inverted fg-align-center p-1">
         <p class="uppercase fg-size-small fg-bold mh-3">
-          GET 15% OFF ALL TESTS USING CODE: SEASON15
+          <?php the_field('offer__description'); ?>
         </p>
       </div>
     </section>
@@ -43,7 +43,7 @@
               
               <a href="<?php echo esc_url(home_url('/')); ?>">
                 <span class="fg-color-primary">
-                  Intolerance <span class="fg-color-dull">Testing</span>
+                  <?php echo get_bloginfo("name"); ?>
                 </span>
               </a>
             </div>
@@ -56,11 +56,7 @@
 
           <!-- navbar links section -->
           <div class="navbar__links">
-            <!-- <a href="our_tests.html">Our Tests</a>
-            <a href="symptoms.html">Symptoms</a>
-            <a href="hair_testing.html">Hair Testing</a>
-            <a href="allergy_vs_intolerance.html">Alergy and Intolerance</a> -->
-            <?php if (function_exists(intolerancetesting_clean_custom_menus())) intolerancetesting_clean_custom_menus(); ?>
+            <?php intolerancetesting_clean_custom_menus('primary'); ?>
           </div>
 
           <!-- shop basket icon -->
