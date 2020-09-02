@@ -90,6 +90,7 @@ get_header();
 			get_template_part('template-parts/section_video');
 		?>
 
+		<!-- steps cards -->
 		<section style="background-color: #f6f6f6;">
 			<div class="container pv-big">
 				<div class="fg-align-center">
@@ -103,64 +104,26 @@ get_header();
 
 				<div class="bubble_cards d-grid four-col mt-5">
 					<!-- card 1 -->
-					<div
-						class="fg-align-center bg-color-white shadow rounded-normal p-4 mt-3"
-					>
-						<div
-							class="bubble_cards__bubble bg-color-primary fg-color-inverted fg-bold d-flex rounded-corners"
-						>
-							<span><?php the_field('steps__card_one_count'); ?></span>
-						</div>
-						<h6 class="fg-bold"><?php the_field('steps__card_one_heading'); ?></h6>
-						<p class="fg-size-small fg-color-dull">
-							<?php the_field('steps__card_one_desc'); ?>
-						</p>
-					</div>
+					<?php if(have_rows('steps__steps_cards')): ?>
+	          <?php while(have_rows('steps__steps_cards')): the_row(); ?>
 
-					<!-- card 2 -->
-					<div
-						class="fg-align-center bg-color-white shadow rounded-normal p-4 mt-3"
-					>
-						<div
-							class="bubble_cards__bubble bg-color-primary fg-color-inverted fg-bold d-flex rounded-corners"
-						>
-							<span><?php the_field('steps__card_two_count'); ?></span>
-						</div>
-						<h6 class="fg-bold"><?php the_field('steps__card_two_heading'); ?></h6>
-						<p class="fg-size-small fg-color-dull">
-							<?php the_field('steps__card_two_desc'); ?>
-						</p>
-					</div>
+							<div
+							class="fg-align-center bg-color-white shadow rounded-normal p-4 mt-3"
+							>
+								<div
+									class="bubble_cards__bubble bg-color-primary fg-color-inverted fg-bold d-flex rounded-corners"
+								>
+									<span><?php echo get_sub_field('counter'); ?></span>
+								</div>
+								<h6 class="fg-bold"><?php echo get_sub_field('heading'); ?></h6>
+								<p class="fg-size-small fg-color-dull">
+									<?php echo get_sub_field('desc'); ?>
+								</p>
+							</div>
 
-					<!-- card 3 -->
-					<div
-						class="fg-align-center bg-color-white shadow rounded-normal p-4 mt-3"
-					>
-						<div
-							class="bubble_cards__bubble bg-color-primary fg-color-inverted fg-bold d-flex rounded-corners"
-						>
-							<span><?php the_field('steps__card_three_count'); ?></span>
-						</div>
-						<h6 class="fg-bold"><?php the_field('steps__card_three_heading'); ?></h6>
-						<p class="fg-size-small fg-color-dull">
-							<?php the_field('steps__card_three_desc'); ?>
-						</p>
-					</div>
+						<?php endwhile; ?>
+	        <?php endif;?>
 
-					<!-- card 4 -->
-					<div
-						class="fg-align-center bg-color-white shadow rounded-normal p-4 mt-3"
-					>
-						<div
-							class="bubble_cards__bubble bg-color-primary fg-color-inverted fg-bold d-flex rounded-corners"
-						>
-							<span><?php the_field('steps__card_four_count'); ?></span>
-						</div>
-						<h6 class="fg-bold"><?php the_field('steps__card_four_heading'); ?></h6>
-						<p class="fg-size-small fg-color-dull">
-							<?php the_field('steps__card_four_desc'); ?>
-						</p>
-					</div>
 				</div>
 			</div>
 		</section>
@@ -177,31 +140,19 @@ get_header();
 
 				<div class="d-grid three-col fg-color-inverted mt-3">
 					<!-- card 1 -->
-					<div class="fg-align-center p-4">
-						<img src="<?php the_field('dark_section__card_one_icon'); ?>" style="width: 3.4rem;" />
-						<h5 class="mt-2"><?php the_field('dark_section__card_one_heading'); ?></h5>
-						<p class="fg-size-small">
-							<?php the_field('dark_section__card_one_desc'); ?>
-						</p>
-					</div>
+					<?php if(have_rows('dark_section__cards')): ?>
+	          <?php while(have_rows('dark_section__cards')): the_row(); ?>
 
-					<!-- card 2 -->
-					<div class="fg-align-center p-4">
-						<img src="<?php the_field('dark_section__card_two_icon'); ?>" style="width: 3.4rem;" />
-						<h5 class="mt-2"><?php the_field('dark_section__card_two_heading'); ?></h5>
-						<p class="fg-size-small">
-							<?php the_field('dark_section__card_two_desc'); ?>
-						</p>
-					</div>
+							<div class="fg-align-center p-4">
+								<img src="<?php echo get_sub_field('img'); ?>" style="width: 3.4rem;" />
+								<h5 class="mt-2"><?php echo get_sub_field('heading'); ?></h5>
+								<p class="fg-size-small">
+									<?php echo get_sub_field('desc'); ?>
+								</p>
+							</div>
 
-					<!-- card 3 -->
-					<div class="fg-align-center p-4">
-						<img src="<?php the_field('dark_section__card_three_icon'); ?>" style="width: 3.4rem;" />
-						<h5 class="mt-2"><?php the_field('dark_section__card_three_heading'); ?></h5>
-						<p class="fg-size-small">
-							<?php the_field('dark_section__card_three_desc'); ?>
-						</p>
-					</div>
+						<?php endwhile; ?>
+	        <?php endif;?>
 				</div>
 
 				<!-- call to action button -->

@@ -26,40 +26,19 @@
 
       <!-- section cards -->
       <div class="d-grid five-col mb-4">
+
+        <?php if(have_rows('comprehensive__attributes')): ?>
+          <?php while(have_rows('comprehensive__attributes')): the_row(); ?>
+
+            <div class="fg-align-center pv-4 ph-3">
+              <img src="<?php echo get_sub_field('attribute_image'); ?>" style="width: 3.4rem;" />
+              <h6 class="fg-bold mt-2 mb-0"><?php echo get_sub_field('heading'); ?></h6>
+              <p><?php echo get_sub_field('desc'); ?></p>
+            </div>
+
+          <?php endwhile; ?>
+        <?php endif;?>
         <!-- card 1 -->
-        <div class="fg-align-center pv-4 ph-3">
-          <img src="<?php the_field('comprehensive__attribute_one_icon'); ?>" style="width: 3.4rem;" />
-          <h6 class="fg-bold mt-2 mb-0"><?php the_field('comprehensive__attribute_one_heading'); ?></h6>
-          <p><?php the_field('comprehensive__attribute_one_desc'); ?></p>
-        </div>
-
-        <!-- card 2 -->
-        <div class="fg-align-center pv-4 ph-3">
-          <img src="<?php the_field('comprehensive__attribute_two_icon'); ?>" style="width: 3.4rem;" />
-          <h6 class="fg-bold mt-2 mb-0"><?php the_field('comprehensive__attribute_two_heading'); ?></h6>
-          <p><?php the_field('comprehensive__attribute_two_desc'); ?></p>
-        </div>
-
-        <!-- card 3 -->
-        <div class="fg-align-center pv-4 ph-3">
-          <img src="<?php the_field('comprehensive__attribute_three_icon'); ?>" style="width: 3.4rem;" />
-          <h6 class="fg-bold mt-2 mb-0"><?php the_field('comprehensive__attribute_three_heading'); ?></h6>
-          <p><?php the_field('comprehensive__attribute_three_desc'); ?></p>
-        </div>
-
-        <!-- card 4 -->
-        <div class="fg-align-center pv-4 ph-3">
-          <img src="<?php the_field('comprehensive__attribute_four_icon'); ?>" style="width: 3.4rem;" />
-          <h6 class="fg-bold mt-2 mb-0"><?php the_field('comprehensive__attribute_four_heading'); ?></h6>
-          <p><?php the_field('comprehensive__attribute_four_desc'); ?></p>
-        </div>
-
-        <!-- card 5 -->
-        <div class="fg-align-center pv-4 ph-3">
-          <img src="<?php the_field('comprehensive__attribute_five_icon'); ?>" style="width: 3.4rem;" />
-          <h6 class="fg-bold mt-2 mb-0"><?php the_field('comprehensive__attribute_five_heading'); ?></h6>
-          <p><?php the_field('comprehensive__attribute_five_desc'); ?></p>
-        </div>
       </div>
     </div>
   </div>
