@@ -234,83 +234,21 @@ get_header();
 				<div
 					class="faq bg-color-white shadow pv-big ph-huge mt-big rounded-normal mh-auto"
 				>
-					<!-- question 1 -->
-					<div class="__faq_entry" style="cursor: pointer;">
-						<span class="fg-bold fg-color-primary mr-3">+</span>
-						<span class="fg-color-black"
-							>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</span
-						>
-						<p class="fg-size-small fg-color-dull mv-2 d-none">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis
-							cupiditate ipsam, voluptatibus maxime molestiae architecto nam
-							itaque similique impedit dolore possimus aliquam eveniet modi
-							asperiores voluptas deserunt sapiente hic quibusdam!
-						</p>
-					</div>
-
-					<hr />
-
-					<!-- quesiton 2 -->
-					<div class="__faq_entry" style="cursor: pointer;">
-						<span class="fg-bold fg-color-primary mr-3">+</span>
-						<span class="fg-color-black"
-							>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</span
-						>
-						<p class="fg-size-small fg-color-dull mv-2 d-none">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis
-							cupiditate ipsam, voluptatibus maxime molestiae architecto nam
-							itaque similique impedit dolore possimus aliquam eveniet modi
-							asperiores voluptas deserunt sapiente hic quibusdam!
-						</p>
-					</div>
-
-					<hr />
-
-					<!-- quesiton 3 -->
-					<div class="__faq_entry" style="cursor: pointer;">
-						<span class="fg-bold fg-color-primary mr-3">+</span>
-						<span class="fg-color-black"
-							>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</span
-						>
-						<p class="fg-size-small fg-color-dull mv-2 d-none">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis
-							cupiditate ipsam, voluptatibus maxime molestiae architecto nam
-							itaque similique impedit dolore possimus aliquam eveniet modi
-							asperiores voluptas deserunt sapiente hic quibusdam!
-						</p>
-					</div>
-
-					<hr />
-
-					<!-- quesiton 4 -->
-					<div class="__faq_entry" style="cursor: pointer;">
-						<span class="fg-bold fg-color-primary mr-3">+</span>
-						<span class="fg-color-black"
-							>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</span
-						>
-						<p class="fg-size-small fg-color-dull mv-2 d-none">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis
-							cupiditate ipsam, voluptatibus maxime molestiae architecto nam
-							itaque similique impedit dolore possimus aliquam eveniet modi
-							asperiores voluptas deserunt sapiente hic quibusdam!
-						</p>
-					</div>
-
-					<hr />
-
-					<!-- quesiton 5 -->
-					<div class="__faq_entry" style="cursor: pointer;">
-						<span class="fg-bold fg-color-primary mr-3">+</span>
-						<span class="fg-color-black"
-							>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</span
-						>
-						<p class="fg-size-small fg-color-dull mv-2 d-none">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis
-							cupiditate ipsam, voluptatibus maxime molestiae architecto nam
-							itaque similique impedit dolore possimus aliquam eveniet modi
-							asperiores voluptas deserunt sapiente hic quibusdam!
-						</p>
-					</div>
+					<!-- faq questions -->
+					<?php if( have_rows('faq__questions') ):?>
+						<?php while (have_rows('faq__questions') ): the_row(); ?>
+							<div class="__faq_entry" style="cursor: pointer;">
+								<span class="fg-bold fg-color-primary mr-3">+</span>
+								<span class="fg-color-black"
+									><?php echo get_sub_field('question'); ?></span
+								>
+								<p class="fg-size-small fg-color-dull mv-2 d-none">
+									<?php echo get_sub_field('answer'); ?>
+								</p>
+							</div>
+							<hr />
+						<?php endwhile;?>
+					<?php endif; ?>
 				</div>
 			</div>
 		</section>

@@ -17,62 +17,25 @@
     </div>
 
     <div class="d-grid three-col mt-2">
-      <!-- card 1 -->
-      <div class="fg-align-center p-4">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/avatar.png'?>" class="avatar" />
-        <p class="fg-size-small fg-color-dull mt-3 mb-2">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque,
-          perferendis? Reiciendis harum exercitationem magnam velit adipisci
-          quam esse delectus excepturi pariatur at, architecto possimus
-          repellat facilis debitis sint accusamus itaque.
-        </p>
-        <p class="fg-size-small fg-bold uppercase">Matthew Robles</p>
-        <img
-          src="<?php echo get_template_directory_uri() . '/assets/images/rating-5star.png'?>"
-          style="width: 6rem;"
-          class="mt-1"
-        />
-      </div>
 
-      <!-- card 2 -->
-      <div class="fg-align-center p-4">
-        <img
-          src="<?php echo get_template_directory_uri() . '/assets/images/avatar.png'?>"
-          style="border-radius: 100%; height: 9rem;"
-        />
-        <p class="fg-size-small fg-color-dull mt-3 mb-2">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque,
-          perferendis? Reiciendis harum exercitationem magnam velit adipisci
-          quam esse delectus excepturi pariatur at, architecto possimus
-          repellat facilis debitis sint accusamus itaque.
-        </p>
-        <p class="fg-size-small fg-bold uppercase">Matthew Robles</p>
-        <img
-          src="<?php echo get_template_directory_uri() . '/assets/images/rating-5star.png'?>"
-          style="width: 6rem;"
-          class="mt-1"
-        />
-      </div>
+      <?php if( have_rows('testimonials__cards') ): ?>
+        <?php while( have_rows('testimonials__cards') ): the_row(); ?>
 
-      <!-- card 3 -->
-      <div class="fg-align-center p-4">
-        <img
-          src="<?php echo get_template_directory_uri() . '/assets/images/avatar.png'?>"
-          style="border-radius: 100%; height: 9rem;"
-        />
-        <p class="fg-size-small fg-color-dull mt-3 mb-2">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque,
-          perferendis? Reiciendis harum exercitationem magnam velit adipisci
-          quam esse delectus excepturi pariatur at, architecto possimus
-          repellat facilis debitis sint accusamus itaque.
-        </p>
-        <p class="fg-size-small fg-bold uppercase">Matthew Robles</p>
-        <img
-          src="<?php echo get_template_directory_uri() . '/assets/images/rating-5star.png'?>"
-          style="width: 6rem;"
-          class="mt-1"
-        />
-      </div>
+          <div class="fg-align-center p-4">
+          <img src="<?php echo get_sub_field('avatar'); ?>" class="avatar" />
+          <p class="fg-size-small fg-color-dull mt-3 mb-2">
+            <?php echo get_sub_field('review'); ?>
+          </p>
+          <p class="fg-size-small fg-bold uppercase"><?php echo get_sub_field('name'); ?></p>
+          <img
+            src="<?php echo get_sub_field('rating'); ?>"
+            style="width: 6rem;"
+            class="mt-1"
+          />
+        </div>
+
+        <?php endwhile ?>
+      <?php endif; ?>
     </div>
 
     <div class="fg-align-center">
