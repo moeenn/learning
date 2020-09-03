@@ -58,17 +58,14 @@ get_header();
 						<!-- user endorsement -->
 						<div class="hero__endorsement d-flex mt-5">
 							<div>
-								<img src="<?php echo get_template_directory_uri() . '/assets/images/avatar.png'?>" class="avatar mr-2" />
+								<img src="<?php the_field('hero__pinned_testimonial_img'); ?>" class="avatar mr-2" />
 							</div>
 							<div class="hero__endorsement_text">
 								<p class="fg-size-small fg-color-dull">
-									Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-									libero expedita sit optio facere repudiandae iusto
-									necessitatibus voluptatum. Dolorum eligendi repudiandae
-									assumenda ea ducimus a cupiditate magnam culpa sunt amet?
+									<?php the_field('hero__pinned_testimonial_review'); ?>
 								</p>
 								<p class="uppercase fg-bold mt-1 fg-size-small fg-color-dull">
-									Matthew Robles
+									<?php the_field('hero__pinned_testimonial_name'); ?>
 								</p>
 							</div>
 						</div>
