@@ -335,6 +335,10 @@ button a {
 }
 
 /* ---- footer links ------------------------- */
+.footer__links a {
+  font-size: var(--fg-size-small);
+  margin: 0 var(--spacing-2);
+}
 
 @media only screen and (max-width: 900px) {
   .footer__links a {
@@ -375,7 +379,7 @@ button a {
 
 /* ---- allergy vs intolerance page --------------- */
 .alergy_v_intolerance__video {
-  margin: var(--spacing-big) 0;
+  margin: 0 0 var(--spacing-big) 0;
 }
 
 .alergy_v_intolerance__comparison p {
