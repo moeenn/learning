@@ -39,7 +39,7 @@
           <div class="navbar__fixed">
             <!-- main site logo -->
             <div class="navbar__fixed__logo">
-              <img src="<?php if (function_exists(intolerancetesting_get_custom_logo_url())) intolerancetesting_get_custom_logo_url(); ?>">
+              <img src="<?php intolerancetesting_get_custom_logo_url(); ?>">
               
               <a href="<?php echo esc_url(home_url('/')); ?>">
                 <span class="fg-color-primary">
