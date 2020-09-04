@@ -55,17 +55,23 @@ get_header();
 							</button>
 						</div>
 
-						<!-- user endorsement -->
+						<!-- pinned user endorsement -->
+						<?php 
+						// get random user endorsement
+						$rows = get_field('testimonials__cards', 'options');
+						$row_count = count($rows);
+						$i = rand(0, $row_count - 1);
+						?>
 						<div class="hero__endorsement d-flex mt-5">
 							<div>
-								<img src="<?php the_field('hero__pinned_testimonial_img'); ?>" class="avatar mr-2" />
+								<img src="<?php echo $rows[$i]['avatar']; ?>" class="avatar mr-2" />
 							</div>
 							<div class="hero__endorsement_text">
 								<p class="fg-size-small fg-color-dull">
-									<?php the_field('hero__pinned_testimonial_review'); ?>
+									<?php echo $rows[$i]['review']; ?>
 								</p>
 								<p class="uppercase fg-bold mt-1 fg-size-small fg-color-dull">
-									<?php the_field('hero__pinned_testimonial_name'); ?>
+									<?php echo $rows[$i]['name']; ?>
 								</p>
 							</div>
 						</div>
@@ -164,7 +170,7 @@ get_header();
 
 		<!-- testimonials section -->
 		<?php 
-			get_template_part('template-parts/section_testimonials');
+			get_template_part('template-parts/section_testimonials_collapsed');
 		?>
 
 		<!-- frequently asked questions -->

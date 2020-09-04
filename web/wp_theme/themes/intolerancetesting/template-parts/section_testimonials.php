@@ -12,14 +12,14 @@
 <section class="bg-color-white">
   <div class="container pv-big">
     <div class="fg-align-center">
-      <h2 class="fg-color-primary"><?php the_field('testimonials__heading_main'); ?></h2>
-      <p><?php the_field('testimonials__desc'); ?></p>
+      <h2 class="fg-color-primary"><?php the_field('testimonials__heading_main', 'options'); ?></h2>
+      <p><?php the_field('testimonials__desc', 'options'); ?></p>
     </div>
 
     <div class="d-grid three-col mt-2">
 
-      <?php if( have_rows('testimonials__cards') ): ?>
-        <?php while( have_rows('testimonials__cards') ): the_row(); ?>
+      <?php if( have_rows('testimonials__cards', 'options') ): ?>
+        <?php while( have_rows('testimonials__cards', 'options') ): the_row(); ?>
 
           <div class="fg-align-center p-4">
           <img src="<?php echo get_sub_field('avatar'); ?>" class="avatar" />
@@ -40,7 +40,7 @@
 
     <div class="fg-align-center">
       <button class="uppercase">
-        <?php $button_link = get_field('testimonials__call_to_action'); ?>
+        <?php $button_link = get_field('testimonials__call_to_action', 'options'); ?>
         <a href="<?php echo $button_link['url']; ?>"><?php echo $button_link['title']; ?></a>
       </button>
     </div>

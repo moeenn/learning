@@ -19,9 +19,12 @@ get_header();
 				<!-- product details -->
 				<div>
 					<div class="d-flex flex-h">
-						<span class="recommended"><?php the_field('product_page__product_recommended'); ?></span>
+						<?php $recommended = get_field('product_page__product_recommended'); if($recommended): ?>
+							<span class="recommended mr-2"><?php the_field('product_page__product_recommended'); ?></span>
+						<?php endif; ?>
+
 						<span
-							class="fg-size-small fg-color-dull fg-bold align-center uppercase ml-2"
+							class="fg-size-small fg-color-dull fg-bold align-center uppercase"
 							><?php the_field('product_page__product_short_name'); ?></span
 						>
 					</div>
@@ -160,7 +163,7 @@ get_header();
 
 <?php 
 	// testimonials section 
-	get_template_part('template-parts/section_testimonials');
+	get_template_part('template-parts/section_testimonials_collapsed');
 
 ?>
 

@@ -44,6 +44,7 @@
   --border-color-normal: rgba(242, 242, 242, 1);
   --border-color-dark: rgba(225, 225, 225, 1);
   --border-radius: 20rem;
+  --border-radius-min: 0.4rem;
 
   /*shadows*/
   --shadow-normal: 0rem 0rem 4rem rgba(0, 0, 0, 0.1);
@@ -728,7 +729,7 @@ textarea {
   height: var(--button-height);
   width: 100%;
   background-color: var(--bg-color-dull);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-min);
   border: none;
   border-bottom: solid calc(var(--border-size-normal) * 2)
     var(--border-color-normal);

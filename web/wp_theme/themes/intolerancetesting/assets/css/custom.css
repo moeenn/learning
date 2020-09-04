@@ -465,3 +465,46 @@ button a {
     width: 100%;
   }
 }
+
+/* ---- Contact Form 7 Styles--------------------- */
+.wpcf7 {
+  width: 60%;
+  margin: 0 auto;
+  padding: var(--spacing-5);
+  background-color: white;
+  box-shadow: var(--shadow-normal);
+  border-radius: var(--border-radius-min);
+}
+
+.wpcf7 label {
+  margin-bottom: var(--spacing-2);
+  color: var(--fg-color-dull);
+  font-weight: normal;
+}
+
+.wpcf7 input[type="submit"] {
+  color: white;
+  background-color: var(--accent-color-primary);
+  border-color: var(--accent-color-primary);
+  border-width: 0;
+  font-weight: var(--fg-weight-bold) !important;
+}
+
+.wpcf7 input[type="submit"]:hover,
+.wpcf7 input[type="submit"]:focus {
+  filter: brightness(103%);
+}
+
+.wpcf7 form .wpcf7-response-output {
+  border: none;
+  margin: 0;
+  padding: var(--spacing-2);
+  background-color: var(--alert-bg) !important;
+  color: var(--alert-fg);
+}
+
+@media only screen and (max-width: 1000px) {
+  .wpcf7 {
+    width: 100%;
+  }
+}
