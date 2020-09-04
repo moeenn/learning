@@ -32,7 +32,8 @@
 
               <div class="mt-auto pt-2">
                 <h5 class="fg-color-primary mb-0"><?php echo get_sub_field('price'); ?></h5>
-                <button class="button-primary mv-1">Add to Cart</button>
+                <?php $button_link = get_sub_field('add_to_cart_link'); ?>
+                <button class="button-primary mv-1"><a href="<?php echo $button_link['url']; ?>"><?php echo $button_link['title']; ?></a></button>
                 <p
                   class="fg-size-small fg-color-dull mt-1"
                   style="text-decoration: underline;"
