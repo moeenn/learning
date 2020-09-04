@@ -17,18 +17,18 @@
     <div class="attributes">
       <div class="fg-align-center">
         <h2>
-          <?php the_field('comprehensive__heading_main'); ?>
+          <?php the_field('comprehensive__heading_main', 'options'); ?>
         </h2>
         <h6>
-          <?php the_field('comprehensive__heading_secondary'); ?>
+          <?php the_field('comprehensive__heading_secondary', 'options'); ?>
         </h6>
       </div>
 
       <!-- section cards -->
       <div class="d-grid five-col mb-4">
 
-        <?php if(have_rows('comprehensive__attributes')): ?>
-          <?php while(have_rows('comprehensive__attributes')): the_row(); ?>
+        <?php if(have_rows('comprehensive__attributes', 'options')): ?>
+          <?php while(have_rows('comprehensive__attributes', 'options')): the_row(); ?>
 
             <div class="fg-align-center pv-4 ph-3">
               <img src="<?php echo get_sub_field('attribute_image'); ?>" style="width: 3.4rem;" />

@@ -46,7 +46,7 @@ get_header();
 							<button class="button-secondary mv-1">
 								<div class="d-flex">
 									<img
-										src="<?php echo get_template_directory_uri() . '/assets/images/play_button_filled.png'?>"
+										src="<?php the_field('hero__secondary_button_play_image'); ?>"
 										style="height: 2rem;"
 										class="mr-1"
 									/>
@@ -172,10 +172,10 @@ get_header();
 			<div class="container pv-big">
 				<div class="fg-align-center">
 					<h2 class="fg-color-primary">
-						<?php the_field('faq__heading_main'); ?>
+						<?php the_field('faq__heading_main', 'options'); ?>
 					</h2>
 					<p class="fg-color-black">
-						<?php the_field('faq__desc'); ?>
+						<?php the_field('faq__desc', 'options'); ?>
 					</p>
 				</div>
 
@@ -183,8 +183,8 @@ get_header();
 					class="faq bg-color-white shadow pv-big ph-huge mt-big rounded-normal mh-auto"
 				>
 					<!-- faq questions -->
-					<?php if( have_rows('faq__questions') ):?>
-						<?php while (have_rows('faq__questions') ): the_row(); ?>
+					<?php if( have_rows('faq__questions', 'options') ):?>
+						<?php while (have_rows('faq__questions', 'options') ): the_row(); ?>
 							<div class="__faq_entry" style="cursor: pointer;">
 								<span class="fg-bold fg-color-primary mr-3">+</span>
 								<span class="fg-color-black"

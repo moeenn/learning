@@ -14,8 +14,8 @@ get_header();
 	<div class="container pb-big">
 		<div class="d-grid three-col gap-5">
 			<!-- card 1 -->
-			<?php if(have_rows('testimonials__cards')): ?>
-				<?php while(have_rows('testimonials__cards')): the_row(); ?>
+			<?php if(have_rows('testimonials__cards', 'options')): ?>
+				<?php while(have_rows('testimonials__cards', 'options')): the_row(); ?>
 
 					<div class="bg-color-white fg-align-center shadow rounded-normal p-4">
 						<img src="<?php echo get_sub_field('avatar'); ?>" class="avatar" />

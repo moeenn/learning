@@ -27,7 +27,7 @@
     <section>
       <div class="bg-color-primary fg-color-inverted fg-align-center p-1">
         <p class="uppercase fg-size-small fg-bold mh-3">
-          <?php the_field('offer__description'); ?>
+          <?php the_field('offer__description', 'options'); ?>
         </p>
       </div>
     </section>

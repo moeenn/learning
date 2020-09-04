@@ -119,8 +119,8 @@ get_header();
 			<!-- 2. frequently asked questions -->
 			<div id="products_page__tab__faq__content" class="d-none">
 				<div class="bg-color-white pv-big">
-					<?php if( have_rows('faq__questions') ):?>
-						<?php while (have_rows('faq__questions') ): the_row(); ?>
+					<?php if( have_rows('faq__questions', 'options') ):?>
+						<?php while (have_rows('faq__questions', 'options') ): the_row(); ?>
 
 							<div class="__faq_entry" style="cursor: pointer;">
 								<span class="fg-bold fg-color-primary mr-3">+</span>

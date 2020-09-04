@@ -13,8 +13,8 @@
   <div class="container">
     <div class="payment_plans bg-color-white shadow rounded-normal">
       <!-- card 1 -->
-      <?php if( have_rows('payment_plans__plan_cards') ):?>
-        <?php while(have_rows('payment_plans__plan_cards')): the_row();?>
+      <?php if( have_rows('payment_plans__plan_cards', 'options') ):?>
+        <?php while(have_rows('payment_plans__plan_cards', 'options')): the_row();?>
 
           <div class="payment_plans__card flex-1 fg-align-center">
             <div class="d-flex flex-v p-4">
