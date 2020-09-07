@@ -174,14 +174,14 @@ get_header();
 			get_template_part('template-parts/section_page_headers');
 		?>
 
-		<section>
+		<section style="margin-top: -3rem;">
       <div class="container pb-big">
         <div class="slider_container">
 
 					<?php if(have_rows('symptom__cards', 'options')): ?>
 						<?php while(have_rows('symptom__cards', 'options')): the_row(); ?>
 
-							<div class="bg-color-white fg-align-center shadow rounded-normal mh-3">
+							<div class="bg-color-white fg-align-center shadow rounded-normal m-3">
 								<img
 									src="<?php echo get_sub_field('img'); ?>"
 									style="width: 100%;"
