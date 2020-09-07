@@ -15,16 +15,16 @@
 get_header();
 ?>
 
-	<main id="primary" class="container site-main">
+	<main id="primary" class="container site-main vpv-big">
 
-		<?php
-			while (have_posts()):
-				the_post();
-				the_content();
+<?php
+while (have_posts()):
+	the_post();
+	the_content();
 
-			endwhile; // End of the loop.
-		?>
+endwhile; // End of the loop.
+?>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
-<?php get_footer(); ?>
+<?php get_footer();?>

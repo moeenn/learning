@@ -169,13 +169,20 @@ get_header();
 		</section>
 
 		<!-- slider section -->
-		<?php 
-			// page main headings and desc
-			get_template_part('template-parts/section_page_headers');
-		?>
-
-		<section style="margin-top: -3rem;">
+		<section>
       <div class="container pb-big">
+
+				<div class="alergy_v_intolerance__comparison pt-big pb-5">
+					<div class="fg-align-center">
+						<h2 class="fg-color-primary">
+							<?php the_field('symptoms__heading', 'options'); ?>
+						</h2>
+						<p>
+							<?php the_field('symptoms__desc', 'options'); ?>
+						</p>
+					</div>
+				</div>
+
         <div class="slider_container">
 
 					<?php if(have_rows('symptom__cards', 'options')): ?>
