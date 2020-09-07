@@ -9,7 +9,7 @@ function main() {
 }
 
 // - misc. utility functions -----------------------------------
-function $(identifier) {
+function $get(identifier) {
   return document.querySelector(identifier);
 }
 
@@ -44,9 +44,9 @@ function toggleFAQEntries() {
 
 function toggleNavLinks() {
   // get the expand button
-  const expandButton = $(".navbar__fixed__links_expand");
+  const expandButton = $get(".navbar__fixed__links_expand");
   const clickHandler = () => {
-    const navLinks = $(".navbar__links");
+    const navLinks = $get(".navbar__links");
 
     // toggle navLinks visibility
     navLinks.style.display =
@@ -65,7 +65,7 @@ function quantityCounter() {
 }
 
 function incrementQuantityCounter() {
-  const incrementButton = $(".__quantity_increment");
+  const incrementButton = $get(".__quantity_increment");
   if (!incrementButton) {
     console.log("Quantity Increment button not found");
     return;
@@ -73,7 +73,7 @@ function incrementQuantityCounter() {
 
   incrementButton.addEventListener("click", () => {
     console.log("Increment Action");
-    let quantityValue = $(".__quantity_value");
+    let quantityValue = $get(".__quantity_value");
 
     if (!quantityValue) {
       console.log("Quantity value not found");
@@ -86,7 +86,7 @@ function incrementQuantityCounter() {
 }
 
 function decrementQuantityCounter() {
-  const decrementButton = $(".__quantity_decrement");
+  const decrementButton = $get(".__quantity_decrement");
   if (!decrementButton) {
     console.log("Quantity Decrement button not found");
     return;
@@ -94,7 +94,7 @@ function decrementQuantityCounter() {
 
   decrementButton.addEventListener("click", () => {
     console.log("Decrement Action");
-    let quantityValue = $(".__quantity_value");
+    let quantityValue = $get(".__quantity_value");
 
     if (!quantityValue) {
       console.log("Quantity value not found");
@@ -111,7 +111,7 @@ function decrementQuantityCounter() {
 }
 
 function getProductTabs() {
-  const tabs = $(".products_page__tabs");
+  const tabs = $get(".products_page__tabs");
   if (!tabs) {
     console.log("Product tabs not found");
     return;
@@ -134,7 +134,7 @@ function productPageTabs() {
   }
 
   for (const id of tabIDs) {
-    const tab = $(id);
+    const tab = $get(id);
     if (!tab) {
       console.log("Tab with ID" + id + " not found");
       return;
@@ -149,7 +149,7 @@ function productPageTabs() {
 }
 
 function activateTab(tabID) {
-  const tab = $(tabID);
+  const tab = $get(tabID);
   if (!tab) {
     console.log("Tab with ID " + tabID + " not found");
     return;
@@ -160,7 +160,7 @@ function activateTab(tabID) {
     tab.classList.add("active");
   }
 
-  const tabContent = $(`${tabID}__content`);
+  const tabContent = $get(`${tabID}__content`);
   if (!tabContent) {
     console.log(`Tab ${tabID}__content not found`);
     return;
@@ -173,14 +173,14 @@ function activateTab(tabID) {
 function deactivateTabs(activeTabID) {
   const allTabs = getProductTabs();
   for (const tab of allTabs) {
-    const tabAnchor = $(tab);
+    const tabAnchor = $get(tab);
 
     if (`#${tabAnchor.id}` === activeTabID) {
       continue;
     }
 
     tabAnchor.classList.remove("active");
-    const tabContent = $(`${tab}__content`);
+    const tabContent = $get(`${tab}__content`);
     tabContent.style.display = "none";
   }
 }

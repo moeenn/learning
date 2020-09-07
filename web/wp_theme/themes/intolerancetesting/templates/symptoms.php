@@ -14,8 +14,8 @@ get_header();
 	<div class="container pb-big">
 		<div class="d-grid four-col-custom gap-5">
 
-			<?php if(have_rows('symptom__cards')): ?>
-				<?php while(have_rows('symptom__cards')): the_row(); ?>
+			<?php if(have_rows('symptom__cards', 'options')): ?>
+				<?php while(have_rows('symptom__cards', 'options')): the_row(); ?>
 
 					<div class="bg-color-white fg-align-center shadow rounded-normal">
 						<img

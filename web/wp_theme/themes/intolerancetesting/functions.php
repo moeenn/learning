@@ -135,12 +135,24 @@ add_action( 'widgets_init', 'intolerancetesting_widgets_init' );
  * Enqueue scripts and styles.
  */
 function intolerancetesting_scripts() {
+	// general styles
 	wp_enqueue_style( 'intolerancetesting-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'intolerancetesting-style-framework', get_template_directory_uri() . "/assets/css/feather.css", array(), _S_VERSION );
 	wp_enqueue_style( 'intolerancetesting-style-custom', get_template_directory_uri() . "/assets/css/custom.css", array("intolerancetesting-style-framework"), _S_VERSION );
 
+	// slick slider styles
+	wp_enqueue_style( 'intolerancetesting-style-slick-slider', get_template_directory_uri() . "/assets/slick/slick.css", array(), _S_VERSION );
+	wp_enqueue_style( 'intolerancetesting-style-slick-slider-theme', get_template_directory_uri() . "/assets/slick/slick-theme.css", array("intolerancetesting-style-slick-slider"), _S_VERSION );
+
+	// general scripts
 	wp_enqueue_script( 'intolerancetesting-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'intolerancetesting-main', get_template_directory_uri() . '/assets/js/main.js', array(), _S_VERSION, true );	
+
+	// slick slider scripts & dependencies
+	wp_enqueue_script( 'intolerancetesting-jquery', get_template_directory_uri() . '/assets/js/jquery-1.11.0.min.js', array(), "1.11.0", true );
+	wp_enqueue_script( 'intolerancetesting-jquery-migrate', get_template_directory_uri() . '/assets/js/jquery-migrate-1.2.1.min.js', array(), "1.2.1", true );		
+	wp_enqueue_script( 'intolerancetesting-slick-slider-js', get_template_directory_uri() . '/assets/slick/slick.min.js', array(), "1.8.1", true );
+	wp_enqueue_script( 'intolerancetesting-slick-slider-settings', get_template_directory_uri() . '/assets/js/slider.js', array("intolerancetesting-slick-slider-js"), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -217,17 +229,4 @@ if( function_exists('acf_add_options_page') ) {
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));
-	
-	// acf_add_options_sub_page(array(
-	// 	'page_title' 	=> 'Theme Header Settings',
-	// 	'menu_title'	=> 'Header',
-	// 	'parent_slug'	=> 'theme-general-settings',
-	// ));
-	
-	// acf_add_options_sub_page(array(
-	// 	'page_title' 	=> 'Theme Footer Settings',
-	// 	'menu_title'	=> 'Footer',
-	// 	'parent_slug'	=> 'theme-general-settings',
-	// ));
-	
 }
