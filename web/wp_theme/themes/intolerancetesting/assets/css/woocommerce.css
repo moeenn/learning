@@ -36,3 +36,15 @@
 .woocommerce-MyAccount-content p {
   margin-bottom: var(--spacing-3);
 }
+
+.woocommerce-message {
+  display: flex;
+}
+
+/* a.button {
+
+} */
+
+a.button > * {
+  margin: auto 0;
+}
