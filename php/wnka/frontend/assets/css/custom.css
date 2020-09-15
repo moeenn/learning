@@ -1,0 +1,106 @@
+.main-view {
+  display: grid;
+  grid-template-rows: 100vh;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "navigation timeline filter";
+}
+
+.navigation {
+  grid-area: navigation;
+  padding: var(--spacing-1);
+}
+
+.timeline {
+  grid-area: timeline;
+  padding-left: var(--spacing-big);
+  display: flex;
+  flex-direction: row;
+}
+
+.filter {
+  grid-area: filter;
+  text-align: center;
+  padding: var(--spacing-huge) 0;
+}
+
+#site-logo img {
+  object-fit: contain;
+}
+
+.navigation nav a {
+  color: white;
+  font-weight: bold;
+  margin: 0 var(--spacing-1);
+}
+
+#years {
+  height: 100vh;
+}
+
+#years ul {
+  display: inline-block;
+  height: 100%;
+  list-style: none;
+  padding: var(--spacing-2) 0 var(--spacing-2) var(--spacing-2);
+  border-right: var(--border-size-normal) solid #afafaf;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#years ul::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+#years ul li:hover {
+  background-color: rgba(white, 0.5);
+}
+
+#years .active a {
+  color: var(--accent-color-primary);
+  font-weight: bold;
+}
+
+#years .active a::after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  height: 1.8rem;
+  width: 1.8rem;
+  margin-left: var(--spacing-2);
+  background-color: #ef8ece;
+  border-radius: 100%;
+  vertical-align: text-top;
+}
+
+#posts {
+  flex: 1;
+  padding: var(--spacing-2) var(--spacing-4);
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#posts::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+#posts .month {
+  margin-bottom: var(--spacing-3);
+}
+
+#posts .month span {
+  color: white;
+}
+
+.month-posts {
+  list-style: none;
+  margin-top: var(--spacing-1);
+}
+
+.month-posts li {
+  margin: 0 0 var(--spacing-1) var(--spacing-2);
+}

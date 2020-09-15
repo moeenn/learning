@@ -1,24 +1,25 @@
 /*global style variables*/
 :root {
   /*colors*/
-  --bg-color-normal: #f1f1f1;
+  --bg-color-normal: #181818;
   --bg-color-dull: rgba(0, 0, 0, 0.02);
   --bg-color-dark: rgba(239, 240, 241, 1);
   --bg-color-selection: rgba(0, 107, 255, 0.15);
-  --accent-color-primary: rgba(220, 45, 101);
+  --accent-color-primary: #7cc2d8;
 
   /*font settings*/
   --fg-family-normal: Segoe UI, Helvetica Neue, Helvetica, Roboto, Arial, sans,
     sans-serif;
   --fg-family-mono: monospace;
-  --fg-size-normal: 1.55rem;
+  --fg-size-normal: 1.6rem;
   --fg-size-small: 1.2rem;
   --fg-weight-normal: 400;
   --fg-weight-bold: 600;
-  --fg-line-height: 2rem;
+  --fg-line-height: 2.5rem;
   --fg-letter-spacing: 0.01rem;
-  --fg-color-normal: rgba(0, 0, 0, 0.7);
-  --fg-color-dull: rgba(91, 91, 91, 0.83);
+  --fg-color-normal: #f0f0f0;
+  --fg-color-dull: #9e9e9e;
+  --fg-color-link: rgba(213, 62, 60, 1);
 
   /*spacing constants*/
   --spacing-1: 1rem;
@@ -43,19 +44,18 @@
   --border-size-normal: 0.1rem;
   --border-color-normal: rgba(242, 242, 242, 1);
   --border-color-dark: rgba(225, 225, 225, 1);
-  --border-radius: 20rem;
+  --border-radius: 0.4rem;
 
   /*shadows*/
-  --shadow-normal: 0rem 0rem 4rem rgba(0, 0, 0, 0.1);
-  --shadow-accent: 0rem 1rem 1.5rem rgba(220, 45, 101, 0.25);
+  --shadow-normal: 0.1rem 0.2rem 0.3rem rgba(0, 0, 0, 0.1);
 
   /*buttons*/
-  --button-fg: var(--accent-color-primary);
-  --button-border: solid var(--border-size-normal) rgba(241, 164, 196, 1);
-  --button-height: 5rem;
+  --button-fg: rgba(85, 85, 85, 1);
+  --button-border: solid var(--border-size-normal) var(--border-color-dark);
+  --button-height: 4rem;
 
   /*display size constants*/
-  --container-width: 1200px;
+  --container-width: 90vw;
 }
 
 /*basic global styling*/
@@ -68,7 +68,7 @@
 }
 
 html {
-  font-size: 62.5%; /* normalize 0.1rem ~= 1px */
+  font-size: 62.5%; /* normalize 1rem ~= 1px */
   height: 100vh;
   scroll-behavior: smooth;
 }
@@ -85,18 +85,16 @@ body {
 
 /*text selection background color*/
 ::-moz-selection {
-  background-color: var(--accent-color-primary);
-  color: white;
+  background-color: var(--bg-color-selection);
 }
 ::selection {
-  background-color: var(--accent-color-primary);
-  color: white;
+  background-color: var(--bg-color-selection);
 }
 
 /*container and sections */
 .container {
-  position: relative;
-  width: 100%;
+  /* position: relative; */
+  width: 90%;
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 var(--spacing-5);
@@ -107,10 +105,6 @@ body {
   display: table;
   clear: both;
 }
-
-/* section {
-  padding: var(--spacing-5) 0;
-} */
 
 /*headings*/
 h1,
@@ -124,34 +118,34 @@ h6 {
 }
 
 h1 {
-  font-size: 6.5rem;
+  font-size: 5rem;
   line-height: 1.2;
-  /* letter-spacing: -0.1rem; */
+  letter-spacing: -0.1rem;
 }
 h2 {
   font-size: 4.2rem;
   line-height: 1.25;
-  /* letter-spacing: -0.1rem; */
+  letter-spacing: -0.1rem;
 }
 h3 {
   font-size: 3.6rem;
   line-height: 1.3;
-  /* letter-spacing: -0.1rem; */
+  letter-spacing: -0.1rem;
 }
 h4 {
   font-size: 3rem;
   line-height: 1.35;
-  /* letter-spacing: -0.08rem; */
+  letter-spacing: -0.08rem;
 }
 h5 {
   font-size: 2.4rem;
   line-height: 1.5;
-  /* letter-spacing: -0.05rem; */
+  letter-spacing: -0.05rem;
 }
 h6 {
   font-size: 1.8rem;
   line-height: 1.8;
-  /* letter-spacing: -0.02rem; */
+  letter-spacing: -0.02rem;
 }
 
 /*font related utility classes*/
@@ -164,10 +158,10 @@ h6 {
 .fg-color-dull {
   color: var(--fg-color-dull);
 }
-.fg-color-inverted {
-  color: white;
+.fg-color-dark {
+  color: black;
 }
-.fg-bold {
+.fg-weight-bold {
   font-weight: var(--fg-weight-bold);
 }
 .fg-italic {
@@ -222,7 +216,7 @@ em {
 
 /*lists*/
 li {
-  margin-bottom: var(--spacing-1);
+  margin-bottom: var(--spacing-2);
 }
 ul {
   list-style: inside;
@@ -241,7 +235,7 @@ ul ol,
 ol ol,
 ol ul {
   margin: var(--spacing-2) var(--spacing-3);
-  font-size: calc(var(--font-size-normal) * 0.9);
+  font-size: calc(var(--fg-size-normal) * 0.9);
 }
 
 /*spacing related utility classes*/
@@ -269,6 +263,9 @@ ol ul {
 .m-huge {
   margin: var(--spacing-huge);
 }
+.m-auto {
+  margin: auto;
+}
 
 .mt-0 {
   margin-top: 0;
@@ -293,6 +290,9 @@ ol ul {
 }
 .mt-huge {
   margin-top: var(--spacing-huge);
+}
+.mt-auto {
+  margin-top: auto;
 }
 
 .mb-0 {
@@ -319,6 +319,9 @@ ol ul {
 .mb-huge {
   margin-bottom: var(--spacing-huge);
 }
+.mb-auto {
+  margin-bottom: auto;
+}
 
 .ml-0 {
   margin-left: 0;
@@ -344,6 +347,9 @@ ol ul {
 .ml-huge {
   margin-left: var(--spacing-huge);
 }
+.ml-auto {
+  margin-left: auto;
+}
 
 .mr-0 {
   margin-right: 0;
@@ -368,6 +374,9 @@ ol ul {
 }
 .mr-huge {
   margin-right: var(--spacing-huge);
+}
+.mr-auto {
+  margin-right: auto;
 }
 
 .mv-0 {
@@ -402,6 +411,10 @@ ol ul {
   margin-top: var(--spacing-huge);
   margin-bottom: var(--spacing-huge);
 }
+.mv-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
 
 .mh-0 {
   margin-left: 0;
@@ -434,6 +447,10 @@ ol ul {
 .mh-huge {
   margin-left: var(--spacing-huge);
   margin-right: var(--spacing-huge);
+}
+.mh-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .p-0 {
@@ -630,12 +647,13 @@ ol ul {
 /*buttons*/
 button,
 .button {
+  font-weight: var(--fg-weight-normal);
   display: inline-block;
   height: var(--button-height);
-  padding: var(--spacing-1) var(--spacing-3);
+  padding: var(--spacing-1) var(--spacing-5);
   margin: calc(var(--spacing-1) / 2) 0;
   color: var(--button-fg);
-  font-size: var(--fg-size-small);
+  font-size: calc(var(--fg-size-small) - 0.1rem);
   text-align: center;
   vertical-align: top;
   letter-spacing: var(--fg-letter-spacing);
@@ -644,7 +662,6 @@ button,
   border-radius: var(--border-radius);
   border: var(--button-border);
   cursor: pointer;
-  font-weight: var(--fg-weight-bold);
 }
 
 .button:hover,
@@ -665,7 +682,7 @@ button:focus {
 
 .button-primary:hover,
 .button-primary:focus {
-  filter: brightness(103%);
+  filter: brightness(110%);
 }
 
 .button-thin {
@@ -797,16 +814,16 @@ img,
 video,
 svg {
   object-fit: cover;
-  /* width: 100%; */
-  /* height: 100%; */
+  width: 100%;
+  height: 100%;
 }
 
 /*links*/
 a {
   text-decoration: none;
   background-color: transparent;
-  color: var(--accent-color-primary);
-  font-weight: var(--fg-weight-bold);
+  color: var(--fg-color-dull);
+  font-weight: var(--fg-weight-normal);
 }
 
 a:hover {
@@ -815,9 +832,9 @@ a:hover {
 
 /*horizontal rules*/
 hr {
-  margin: var(--spacing-3) 0;
+  margin: var(--spacing-2) 0;
   border-width: 0;
-  border-top: solid var(--border-size-normal) var(--border-color-dark);
+  border-top: solid var(--border-size-normal) var(--border-color-normal);
 }
 
 /*code */
@@ -914,10 +931,6 @@ table th {
   box-shadow: var(--shadow-normal);
 }
 
-.shadow-accent {
-  box-shadow: var(--shadow-accent);
-}
-
 .full-width {
   width: 100%;
 }
@@ -969,7 +982,7 @@ table th {
 /*display positioning: grid*/
 .d-grid {
   display: grid;
-  /* grid-gap: var(--spacing-3); */
+  grid-gap: var(--spacing-3);
 }
 .two-col {
   grid-template-columns: repeat(
@@ -977,14 +990,6 @@ table th {
     minmax(calc(var(--container-width) / 2.75), 1fr)
   );
 }
-
-.two-col-custom {
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(calc(var(--container-width) / 4), 1fr)
-  );
-}
-
 .three-col {
   grid-template-columns: repeat(
     auto-fit,
@@ -995,13 +1000,6 @@ table th {
   grid-template-columns: repeat(
     auto-fit,
     minmax(calc(var(--container-width) / 4.75), 1fr)
-  );
-}
-
-.four-col-custom {
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(calc(var(--container-width) / 6), 1fr)
   );
 }
 .five-col {
@@ -1023,30 +1021,24 @@ table th {
 }
 
 /* adjust for smaller screens */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   /* root css variables */
   :root {
     --spacing-1: 1rem;
-    --spacing-2: 1.8rem;
-    --spacing-3: 2.4rem;
-    --spacing-4: 3.3rem;
-    --spacing-5: 4rem;
+    --spacing-2: 1.5rem;
+    --spacing-3: 2rem;
+    --spacing-4: 2.5rem;
+    --spacing-5: 3rem;
     --spacing-big: 5rem;
     --spacing-huge: 6.5rem;
-  }
 
-  /* container and sections */
-  /* .container {
-    padding: 0 var(--spacing-4);
-  } */
-  /* section 		{ padding: var(--spacing-4) 0; } */
+    --container-width: 95vw;
+  }
 
   /*allow canvas resizing on very small screens*/
   .two-col,
-  .two-col-custom,
   .three-col,
   .four-col,
-  .four-col-custom,
   .five-col,
   .six-col {
     grid-template-columns: 1fr;
