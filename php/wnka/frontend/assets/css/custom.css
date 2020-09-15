@@ -172,3 +172,35 @@
     margin-left: var(--spacing-3);
   }
 }
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--bg-color-normal);
+  z-index: 10;
+}
+
+.overlay .closeBtn {
+  font-weight: bold;
+  font-size: 5rem;
+  margin: var(--spacing-4);
+  color: #fccb05;
+}
+
+.overlay-content {
+  text-align: center;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.overlay-content a {
+  display: block;
+  color: white;
+}

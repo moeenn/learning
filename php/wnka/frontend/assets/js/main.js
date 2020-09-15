@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", main);
 
 // always execute on page load
 function main() {
+  enableNavMenu();
+
   const yearLinks = getYearLinks();
   if (!yearLinks) {
     return;
@@ -75,4 +77,51 @@ function isElementVisible(el) {
     el.contains(efp(rect.right, rect.bottom)) ||
     el.contains(efp(rect.left, rect.bottom))
   );
+}
+
+function enableNavMenu() {
+  openNavMenu();
+  closeNavMenu();
+}
+
+function openNavMenu() {
+  const clickHandler = (event) => {
+    event.preventDefault();
+    const overlay = document.querySelector(".overlay");
+    if (!overlay) {
+      console.log("Overlay Menu not found");
+      return;
+    }
+
+    overlay.style.display = "initial";
+  };
+
+  const openButton = document.getElementById("menu");
+  if (!openButton) {
+    console.log("Nav Menu Button not found");
+    return;
+  }
+
+  openButton.addEventListener("click", clickHandler);
+}
+
+function closeNavMenu() {
+  const clickHandler = (event) => {
+    event.preventDefault();
+
+    const overlay = document.querySelector(".overlay");
+    if (!overlay) {
+      console.log("Overlay Menu not found");
+      return;
+    }
+
+    overlay.style.display = "none";
+  };
+
+  const closeButton = document.querySelector(".closeBtn");
+  if (!closeButton) {
+    console.log("Nav Menu Close Button not found");
+    return;
+  }
+  closeButton.addEventListener("click", clickHandler);
 }
