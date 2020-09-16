@@ -15,6 +15,9 @@ function main() {
 
   // activate relevant year link on scroll event
   identifyVisibleYear(yearLinks);
+
+  // enable opening & closing of preview dialogue for posts
+  enablePostPreviews();
 }
 
 /*
@@ -59,7 +62,7 @@ function closeNavMenu() {
     overlay.style.display = "none";
   };
 
-  const closeButton = document.querySelector(".closeBtn");
+  const closeButton = document.querySelector("#myNav .closeBtn");
   if (!closeButton) {
     console.log("Nav Menu Close Button not found");
     return;
@@ -73,7 +76,7 @@ function closeNavMenu() {
 function getYearLinks() {
   const yearLinksContainer = document.getElementById("years");
   if (!yearLinksContainer) {
-    console.warn("Year Links Container Not found");
+    console.log("Year Links Container Not found");
     return;
   }
 
@@ -179,4 +182,44 @@ function autoUpdateSelectedYear(currentYearID) {
       link.classList.add("active");
     }
   }
+}
+
+/*
+ *  Post preview sections
+ */
+function enablePostPreviews() {
+  attachPostEventListeners();
+  closePostPreview();
+}
+
+function openPostPreview() {
+  const previewWindow = document.querySelector(".post-preview");
+  previewWindow.style.display = "block";
+}
+
+function attachPostEventListeners() {
+  const postLinks = document.querySelectorAll("#posts li a");
+  for (const link of postLinks) {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log("Link clicked");
+      openPostPreview();
+    });
+  }
+}
+
+function closePostPreview() {
+  const closeBtn = document.querySelector("#close-post-preview.closeBtn");
+  if (!closeBtn) {
+    console.log("Post Preview close button not found");
+    return;
+  }
+
+  closeBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log("preview close clicked");
+
+    const previewWindow = document.querySelector(".post-preview");
+    previewWindow.style.display = "none";
+  });
 }

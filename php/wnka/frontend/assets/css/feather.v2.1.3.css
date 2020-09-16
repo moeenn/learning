@@ -161,6 +161,9 @@ h6 {
 .fg-color-dark {
   color: black;
 }
+.fg-color-white {
+  color: white;
+}
 .fg-weight-bold {
   font-weight: var(--fg-weight-bold);
 }

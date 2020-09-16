@@ -1,7 +1,7 @@
 .main-view {
   display: grid;
   grid-template-rows: 100vh;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1.5fr 3fr 0.5fr;
   grid-template-areas: "navigation timeline filter";
 }
 
@@ -15,7 +15,7 @@
 }
 
 #logo-full {
-  width: 100%;
+  width: 70%;
 }
 
 #logo-small {
@@ -61,6 +61,10 @@
   height: 0;
 }
 
+#years ul li {
+  margin-bottom: var(--spacing-big);
+}
+
 #years ul li:hover {
   background-color: rgba(white, 0.5);
 }
@@ -68,10 +72,6 @@
 #years .active a {
   color: white;
   font-weight: bold;
-}
-
-#years ul li {
-  margin-bottom: var(--spacing-big);
 }
 
 #years .active a::after {
@@ -117,6 +117,75 @@
   margin: 0 0 var(--spacing-1) var(--spacing-2);
 }
 
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--bg-color-normal);
+  z-index: 10;
+}
+
+.closeBtn {
+  font-weight: normal;
+  font-size: 6rem;
+  margin: var(--spacing-4);
+  color: #fccb05;
+}
+
+.overlay-content {
+  text-align: center;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.overlay-content a {
+  display: block;
+  color: white;
+}
+
+.static-content-heading {
+  padding-top: var(--spacing-big);
+}
+
+.static-content {
+  width: 60%;
+}
+
+@media only screen and (max-width: 756px) {
+  .static-content-heading {
+    padding-top: 0;
+  }
+
+  .static-content {
+    width: 100%;
+  }
+
+  .post-preview {
+    height: calc(100vh - 7rem);
+    width: 100vw;
+    background-color: var(--bg-color-normal);
+    z-index: 2;
+    position: fixed;
+    top: 7rem;
+    left: 0;
+    padding: 0 var(--spacing-5);
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .post-preview::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
 @media only screen and (max-width: 950px) {
   .main-view {
     grid-template-rows: 7rem 5rem calc(100vh - 12rem);
@@ -144,6 +213,7 @@
     text-align: left;
     height: 2rem;
     align-self: center;
+    cursor: pointer;
   }
 
   #logo-small {
@@ -175,36 +245,4 @@
     width: 1rem;
     margin-left: var(--spacing-3);
   }
-}
-
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  background: var(--bg-color-normal);
-  z-index: 10;
-}
-
-.overlay .closeBtn {
-  font-weight: bold;
-  font-size: 5rem;
-  margin: var(--spacing-4);
-  color: #fccb05;
-}
-
-.overlay-content {
-  text-align: center;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.overlay-content a {
-  display: block;
-  color: white;
 }

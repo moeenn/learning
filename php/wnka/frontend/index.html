@@ -20,8 +20,8 @@
             <div class="mt-2 mb-auto">
               <nav class="fg-align-center">
                 <a href="#">Shop</a>
-                <a href="#">DNA</a>
-                <a href="#">Timeline</a>
+                <a href="dna.html">DNA</a>
+                <a href="index.html">Timeline</a>
               </nav>
             </div>
           </div>
@@ -45,8 +45,8 @@
             <!-- Overlay content -->
             <div class="overlay-content">
               <a href="#">Shop</a>
-              <a href="#">DNA</a>
-              <a href="#">Timeline</a>
+              <a href="dna.html">DNA</a>
+              <a href="index.html">Timeline</a>
             </div>
           </div>
         </section>
@@ -56,6 +56,7 @@
           <!-- years column -->
           <div id="years">
             <ul class="pt-5">
+              <!-- TODO: populate with JS -->
               <li class="active"><a href="#2020">2020</a></li>
               <li><a href="#2019">2019</a></li>
               <li><a href="#2018">2018</a></li>
@@ -86,11 +87,36 @@
           </div>
 
           <div id="posts">
+            <div class="post-preview" style="display: none">
+              <div class="fg-align-center">
+                <a href="#" id="close-post-preview" class="closeBtn">&times;</a>
+              </div>
+              <p class="fg-color-dull">May 7, 2020</p>
+              <div class="fg-align-center mt-4">
+                <p class="fg-color-white">Limewire Launches</p>
+                <img src="assets/images/limewire.png" class="mv-2" />
+              </div>
+              <div class="mv-4">
+                <p class="fg-color-dull">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Adipisci voluptas dignissimos sapiente voluptatem quo pariatur
+                  corporis at quam esse ut suscipit, tenetur, voluptatibus eius
+                  eos quaerat nemo excepturi cumque obcaecati.
+                </p>
+              </div>
+              <div class="fg-align-center mv-big">
+                <a href="#" class="fg-color-white mr-3">Share</a>
+                <a href="#" class="fg-color-white">Comment</a>
+              </div>
+            </div>
+
             <div id="2020">
               <div class="month">
                 <span class="fg-weight-bold">January</span>
                 <ul class="month-posts">
-                  <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                  <li>
+                    <a href="#">Lorem ipsum dolor sit amet.</a>
+                  </li>
                   <li><a href="#">Lorem ipsum dolor</a></li>
                   <li><a href="#">Lorem ipsum dolor sit.</a></li>
                 </ul>
@@ -719,7 +745,7 @@
         </section>
 
         <section class="filter">
-          <a href="#" class="fg-color-primary">Filter</a>
+          <a href="#" class="fg-color-primary">FILTER</a>
         </section>
       </div>
     </div>
