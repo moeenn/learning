@@ -12,17 +12,17 @@
       <div class="main-view">
         <!-- first column -->
         <section class="navigation">
-          <div class="d-flex flex-v">
-            <div id="site-logo" class="fg-align-center mt-auto">
-              <img id="logo-full" src="assets/images/logo.png" alt="logo" />
-            </div>
+          <div>
+            <nav>
+              <a href="#">Shop</a>
+              <a href="dna.html">DNA</a>
+              <a href="index.html">Timeline</a>
+            </nav>
+          </div>
 
-            <div class="mt-2 mb-auto">
-              <nav class="fg-align-center">
-                <a href="#">Shop</a>
-                <a href="dna.html">DNA</a>
-                <a href="index.html">Timeline</a>
-              </nav>
+          <div class="d-flex flex-v">
+            <div id="site-logo" class="fg-align-center mv-auto">
+              <img id="logo-full" src="assets/images/logo.png" alt="logo" />
             </div>
           </div>
         </section>
@@ -88,21 +88,28 @@
 
           <div id="posts">
             <div class="post-preview" style="display: none">
-              <div class="fg-align-center">
+              <div class="close-button-container">
                 <a href="#" id="close-post-preview" class="closeBtn">&times;</a>
               </div>
               <p class="fg-color-dull">May 7, 2020</p>
               <div class="fg-align-center mt-4">
                 <p class="fg-color-white">Limewire Launches</p>
-                <img src="assets/images/limewire.png" class="mv-2" />
+                <div class="slider-container mv-2">
+                  <img src="assets/images/limewire.png" />
+                  <!-- <img src="assets/images/limewire.png" /> -->
+                  <!-- <img src="assets/images/limewire.png" /> -->
+                </div>
               </div>
               <div class="mv-4">
-                <p class="fg-color-dull">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Adipisci voluptas dignissimos sapiente voluptatem quo pariatur
-                  corporis at quam esse ut suscipit, tenetur, voluptatibus eius
-                  eos quaerat nemo excepturi cumque obcaecati.
-                </p>
+                <div class="d-flex">
+                  <p class="post-text fg-color-dull mh-auto">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Adipisci voluptas dignissimos sapiente voluptatem quo
+                    pariatur corporis at quam esse ut suscipit, tenetur,
+                    voluptatibus eius eos quaerat nemo excepturi cumque
+                    obcaecati.
+                  </p>
+                </div>
               </div>
               <div class="fg-align-center mv-big">
                 <a href="#" class="fg-color-white mr-3">Share</a>
@@ -745,11 +752,21 @@
         </section>
 
         <section class="filter">
-          <a href="#" class="fg-color-primary">FILTER</a>
+          <a href="#" class="fg-color-primary">Categories</a>
         </section>
       </div>
     </div>
 
+    <!-- <script
+      type="text/javascript"
+      src="assets/slick/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="assets/slick/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script type="text/javascript" src="assets/slick/slick.min.js"></script>
+    <script type="text/javascript" src="assets/slick/slick.config.js"></script> -->
     <script src="assets/js/main.js" type="module"></script>
   </body>
 </html>

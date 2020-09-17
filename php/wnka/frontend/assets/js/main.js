@@ -202,7 +202,6 @@ function attachPostEventListeners() {
   for (const link of postLinks) {
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      console.log("Link clicked");
       openPostPreview();
     });
   }
@@ -217,7 +216,6 @@ function closePostPreview() {
 
   closeBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    console.log("preview close clicked");
 
     const previewWindow = document.querySelector(".post-preview");
     previewWindow.style.display = "none";
