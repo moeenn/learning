@@ -32,7 +32,7 @@
 .filter {
   grid-area: filter;
   text-align: center;
-  padding-top: var(--spacing-3);
+  padding-top: var(--spacing-big);
 }
 
 .navigation nav {
@@ -53,7 +53,7 @@
   display: inline-block;
   height: 100%;
   list-style: none;
-  padding: var(--spacing-3) 0 var(--spacing-2) var(--spacing-2);
+  padding: var(--spacing-big) 0 var(--spacing-2) var(--spacing-2);
   border-right: var(--border-size-normal) solid #afafaf;
   overflow-y: scroll;
   scrollbar-width: none;
@@ -92,8 +92,8 @@
 
 #posts {
   flex: 1;
-  margin-top: var(--spacing-2);
-  padding: var(--spacing-1) var(--spacing-4);
+  /* margin-top: calc(var(--spacing-big) - var(--spacing-1)); */
+  padding: var(--spacing-big) var(--spacing-4) 0 var(--spacing-4);
   height: calc(100% - var(--spacing-2));
   overflow-y: scroll;
   scrollbar-width: none;
@@ -174,7 +174,9 @@
   position: fixed;
   height: 100vh;
   background-color: var(--bg-color-normal);
+  padding-top: calc(var(--spacing-5) + var(--spacing-1));
   z-index: 2;
+  top: 0;
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -191,6 +193,12 @@
 
 .post-text {
   width: 80%;
+  text-align: center;
+}
+
+.post-preview .close-button-container {
+  text-align: right;
+  padding: 0 var(--spacing-5);
 }
 
 /* tablet screen */
@@ -235,6 +243,11 @@
     padding-left: 0;
   }
 
+  #posts {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
   .filter {
     padding: 0;
     text-align: right;
@@ -245,6 +258,7 @@
   }
 
   #years ul {
+    padding-top: 0;
     padding-left: 0;
   }
 
@@ -283,6 +297,6 @@
   }
 
   .post-preview .close-button-container {
-    text-align: center;
+    padding: 0;
   }
 }

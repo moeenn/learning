@@ -76,7 +76,6 @@ function closeNavMenu() {
 function getYearLinks() {
   const yearLinksContainer = document.getElementById("years");
   if (!yearLinksContainer) {
-    console.log("Year Links Container Not found");
     return;
   }
 
