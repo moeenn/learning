@@ -1,12 +1,11 @@
 #include "database.hpp"
 #include <iostream>
+#include <sstream>
 #include <vector>
 
 struct User {
   const int id;
   const std::string name;
-
-  User(int id, std::string name) : id(id), name(name) {}
 };
 
 void create_users_table(const Database &db) {
@@ -19,9 +18,10 @@ void create_users_table(const Database &db) {
 }
 
 void add_user(const Database &db, const User &u) {
-  char query[200];
-	std::sprintf(query, "INSERT INTO users VALUES (%d, '%s')", u.id, u.name.c_str());
-  db.exec(query);
+  std::stringstream query;
+  query << "INSERT INTO users VALUES (" << u.id << ", '" << u.name << "')";
+
+  db.exec(query.str().c_str());
 }
 
 std::vector<User> get_users(const Database &db, const char *&query) {
@@ -32,13 +32,18 @@ std::vector<User> get_users(const Database &db, const char *&query) {
 int main() {
   Database db("example.db");
 
-	const User u(1, "Muhammad Moeen");
-	add_user(db, u);
+  create_users_table(db);
+
+  const User users[] = {{1, "Muhammad Moeen"}, {2, "Haseeb Raza"}};
+
+  for (const User &u : users) {
+    add_user(db, u);
+  }
 
   const char *query = "SELECT * FROM users;";
-  const std::vector<User> users = get_users(db, query);
+  const std::vector<User> all_users = get_users(db, query);
 
-  for (const User &user : users) {
+  for (const User &user : all_users) {
     std::cout << user.id << " :: " << user.name << "\n";
   }
 

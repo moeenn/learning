@@ -2,7 +2,7 @@
 #include <sqlite3.h>
 
 #include "database.hpp"
-#include "main.hpp"
+#include "log.hpp"
 
 // constructor
 Database::Database(const char *dbName) {

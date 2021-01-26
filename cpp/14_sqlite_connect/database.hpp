@@ -1,7 +1,7 @@
 #ifndef DATABASE_H_
 #define DATABASE_H_
 
-#include "main.hpp"
+#include "log.hpp"
 #include <iostream>
 #include <sqlite3.h>
 #include <vector>
@@ -17,7 +17,6 @@ public:
   void exec(const char *) const;
 
   // queries returning records
-  // records stored im m_results;
   template <typename T> std::vector<T> fetch(const char *sql) const {
     static std::vector<T> results;
 
