@@ -1,0 +1,106 @@
+:root {
+  --base-color: hsl(223, 28%, 94%);
+  --active-color: hsl(223, 28%, 90%);
+  --font-size: 0.9rem;
+  --font-color: hsl(230, 18%, 20%);
+  --font-color-dull: hsl(230, 18%, 55%);
+  --border: calc(var(--font-size) / 10) solid var(--active-color);
+  --space: clamp(1rem, 1.5vw, 3rem);
+}
+
+:is(*, ::before, ::after) {
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: var(--space);
+  font-size: var(--font-size);
+  color: var(--font-color);
+  line-height: calc(var(--font-size) * 1.611);
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-weight: normal;
+  margin-bottom: calc(var(--space) * 0.75);
+  letter-spacing: calc(var(--font-size) / 12.85);
+}
+
+h1 {
+  --size: calc(var(--font-size) * 2.5);
+  font-size: var(--size);
+  line-height: var(--size);
+}
+
+h2 {
+  --size: calc(var(--font-size) * 2.26);
+  font-size: var(--size);
+  line-height: var(--size);
+}
+
+h3 {
+  --size: calc(var(--font-size) * 2.02);
+  font-size: var(--size);
+  line-height: var(--size);
+}
+
+h4 {
+  --size: calc(var(--font-size) * 1.78);
+  font-size: var(--size);
+  line-height: var(--size);
+}
+
+h5 {
+  --size: calc(var(--font-size) * 1.54);
+  font-size: var(--size);
+  line-height: var(--size);
+}
+
+h6 {
+  --size: calc(var(--font-size) * 1.3);
+  font-size: var(--size);
+  line-height: var(--size);
+}
+
+p {
+  margin-bottom: var(--space);
+  letter-spacing: calc(var(--font-size) / 45);
+}
+
+:is(button, input, textarea, select) {
+  font-size: calc(var(--font-size) * 0.9);
+  border: var(--border);
+  padding: calc(var(--space) / 2);
+  border-radius: 0.2rem;
+}
+
+button {
+  background-color: var(--base-color);
+  padding: calc(var(--space) / 2) var(--space);
+}
+
+:is(button, input, textarea, select):is(:active, :hover, :focus) {
+  border-color: black;
+}
+
+select {
+  background-color: inherit;
+}
+
+fieldset {
+  padding: 0;
+  margin-bottom: var(--space);
+}
+
+fieldset > :is(input, textarea, select) {
+  display: block;
+  width: 100%;
+}
+
+hr {
+  border-bottom: var(--border);
+  margin: calc(var(--space) * 2) 0;
+}
