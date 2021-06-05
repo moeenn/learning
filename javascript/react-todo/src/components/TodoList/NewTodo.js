@@ -8,7 +8,7 @@ const NewTodo = (props) => {
     <form
       className={styles.flex}
       onSubmit={(e) =>
-        handleSubmit(e, props.todos, props.setTodos, item, setItem)
+        handleSubmit(e, props.todos, props.setTodos, item)
       }
     >
       <input
@@ -21,7 +21,7 @@ const NewTodo = (props) => {
         type="submit"
         className={styles.item_submit}
         onClick={(e) =>
-          handleSubmit(e, props.todos, props.setTodos, item, setItem)
+          handleSubmit(e, props.todos, props.setTodos, item)
         }
         value="Add"
       />
@@ -38,7 +38,7 @@ const handleChange = (event, setItem) => {
   setItem(value);
 };
 
-const handleSubmit = (e, todos, setTodos, item, setItem) => {
+const handleSubmit = (e, todos, setTodos, item) => {
   e.preventDefault();
 
   const newItem = {
@@ -48,7 +48,6 @@ const handleSubmit = (e, todos, setTodos, item, setItem) => {
   };
 
   setTodos([...todos, newItem]);
-  setItem("");
 };
 
 export default NewTodo;

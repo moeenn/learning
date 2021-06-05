@@ -1,4 +1,4 @@
-import Todo from "./Todo.js";
+import Todo from "./TodoList/Todo.js";
 
 const App = () => {
   return <Todo />

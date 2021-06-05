@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './wireframe.css';
+
 import App from './components/App';
+import './styles/wireframe.css';
 
 ReactDOM.render(
   <React.StrictMode>
