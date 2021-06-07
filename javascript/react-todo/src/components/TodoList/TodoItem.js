@@ -1,17 +1,17 @@
 import styles from "./TodoItem.module.css";
 
-function TodoItem(props) {
+function TodoItem({ todo, markTodoItem, deleteTodoItem }) {
   return (
     <div className={styles.todo_item}>
       <input
         type="checkbox"
-        checked={props.todo.done}
-        onChange={() => props.markTodoItem(props.todo.id)}
+        checked={todo.done}
+        onChange={() => markTodoItem(todo.id)}
       />
-      <span>{props.todo.text}</span>
+      <span>{todo.text}</span>
       <span
         className={styles.delete}
-        onClick={() => props.deleteTodoItem(props.todo.id)}
+        onClick={() => deleteTodoItem(todo.id)}
       >
         x
       </span>

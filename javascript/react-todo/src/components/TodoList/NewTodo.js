@@ -20,9 +20,6 @@ const NewTodo = ({ setTodos }) => {
       <input
         type="submit"
         className={styles.item_submit}
-        onClick={(e) =>
-          handleSubmit(e, setTodos, todoNameRef)
-        }
         value="Add"
       />
     </form>
